@@ -11,6 +11,6 @@ package com.mycompany.csi2999;
 public class Csi2999 {
 
     public static void main(String[] args) {
-        System.out.println("hi");
+        System.out.println("ethan");
     }
 }
