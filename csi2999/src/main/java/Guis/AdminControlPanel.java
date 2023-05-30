@@ -34,11 +34,9 @@ public class AdminControlPanel extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AdminMenu.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         AdminMenu.setText("Admin Menu");
-        getContentPane().add(AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 270, 90));
 
         CreateNewRecipe.setBackground(new java.awt.Color(153, 255, 153));
         CreateNewRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -48,7 +46,6 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 CreateNewRecipeActionPerformed(evt);
             }
         });
-        getContentPane().add(CreateNewRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 310, 160));
 
         DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
         DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -58,7 +55,6 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 DeleteRecipeActionPerformed(evt);
             }
         });
-        getContentPane().add(DeleteRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 340, 160));
 
         BackToLogin.setBackground(new java.awt.Color(204, 204, 255));
         BackToLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -68,7 +64,39 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 BackToLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(BackToLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 220, 120));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(AdminMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(270, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(283, 283, 283))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(CreateNewRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DeleteRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(AdminMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CreateNewRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(BackToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
