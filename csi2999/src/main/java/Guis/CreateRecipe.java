@@ -45,6 +45,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DescriptionTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         DescriptionTextBox.addActionListener(new java.awt.event.ActionListener() {
@@ -52,8 +53,11 @@ public class CreateRecipe extends javax.swing.JFrame {
                 DescriptionTextBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(DescriptionTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 644, 40));
 
         jLabel2.setText("Description:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 184, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(894, 196, -1, -1));
 
         IngredientsTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         IngredientsTextBox.addActionListener(new java.awt.event.ActionListener() {
@@ -61,14 +65,19 @@ public class CreateRecipe extends javax.swing.JFrame {
                 IngredientsTextBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(IngredientsTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 642, 40));
 
         jLabel4.setText("Cook Times:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
         jLabel5.setText("How to cook:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         CookTimesTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
+        getContentPane().add(CookTimesTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 642, 40));
 
         HowToCookTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
+        getContentPane().add(HowToCookTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 642, 35));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -92,95 +101,26 @@ public class CreateRecipe extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel6.setText("Ingredients:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
         SubmitButton.setText("Submit");
+        getContentPane().add(SubmitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 442, -1, -1));
 
         ExitButton.setText("Exit");
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 442, -1, -1));
 
         jLabel7.setText("Recipe I.D:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 130, -1, -1));
 
         RecipeIDTextBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RecipeIDTextBoxActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel6))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HowToCookTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SubmitButton)
-                                .addGap(44, 44, 44)
-                                .addComponent(ExitButton))
-                            .addComponent(IngredientsTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CookTimesTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(RecipeIDTextBox, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DescriptionTextBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel3)
-                        .addGap(21, 21, 21))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(RecipeIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DescriptionTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(4, 4, 4)))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(IngredientsTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(CookTimesTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HowToCookTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SubmitButton)
-                    .addComponent(ExitButton))
-                .addGap(36, 36, 36))
-        );
+        getContentPane().add(RecipeIDTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 127, 170, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
