@@ -59,6 +59,16 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         );
 
         BookmarksDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        BookmarksDropDown.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                BookmarksDropDownMouseWheelMoved(evt);
+            }
+        });
+        BookmarksDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookmarksDropDownActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -107,6 +117,14 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
     private void BookmarksReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookmarksReturnButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BookmarksReturnButtonActionPerformed
+
+    private void BookmarksDropDownMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_BookmarksDropDownMouseWheelMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookmarksDropDownMouseWheelMoved
+
+    private void BookmarksDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookmarksDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookmarksDropDownActionPerformed
 
     /**
      * @param args the command line arguments
