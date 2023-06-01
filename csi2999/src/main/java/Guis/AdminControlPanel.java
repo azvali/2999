@@ -27,9 +27,9 @@ public class AdminControlPanel extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        BackToLogin = new javax.swing.JButton();
-        DeleteRecipe = new javax.swing.JButton();
-        CreateNewRecipe = new javax.swing.JButton();
+        AdminSignOut = new javax.swing.JButton();
+        DeleteRecipeButton = new javax.swing.JButton();
+        CreateNewRecipeButton = new javax.swing.JButton();
         AdminMenu = new javax.swing.JLabel();
         background5 = new javax.swing.JLabel();
 
@@ -45,38 +45,38 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(null);
 
-        BackToLogin.setBackground(new java.awt.Color(204, 204, 255));
-        BackToLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        BackToLogin.setText("Back to Login");
-        BackToLogin.addActionListener(new java.awt.event.ActionListener() {
+        AdminSignOut.setBackground(new java.awt.Color(204, 204, 255));
+        AdminSignOut.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        AdminSignOut.setText("Sign Out");
+        AdminSignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackToLoginActionPerformed(evt);
+                AdminSignOutActionPerformed(evt);
             }
         });
-        jPanel1.add(BackToLogin);
-        BackToLogin.setBounds(293, 344, 220, 120);
+        jPanel1.add(AdminSignOut);
+        AdminSignOut.setBounds(293, 344, 220, 120);
 
-        DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
-        DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        DeleteRecipe.setText("Delete Existing Recipe");
-        DeleteRecipe.addActionListener(new java.awt.event.ActionListener() {
+        DeleteRecipeButton.setBackground(new java.awt.Color(255, 51, 51));
+        DeleteRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        DeleteRecipeButton.setText("Delete Existing Recipe");
+        DeleteRecipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteRecipeActionPerformed(evt);
+                DeleteRecipeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(DeleteRecipe);
-        DeleteRecipe.setBounds(448, 149, 300, 160);
+        jPanel1.add(DeleteRecipeButton);
+        DeleteRecipeButton.setBounds(448, 149, 300, 160);
 
-        CreateNewRecipe.setBackground(new java.awt.Color(153, 255, 153));
-        CreateNewRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        CreateNewRecipe.setText("Create New Recipe");
-        CreateNewRecipe.addActionListener(new java.awt.event.ActionListener() {
+        CreateNewRecipeButton.setBackground(new java.awt.Color(153, 255, 153));
+        CreateNewRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CreateNewRecipeButton.setText("Create New Recipe");
+        CreateNewRecipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateNewRecipeActionPerformed(evt);
+                CreateNewRecipeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(CreateNewRecipe);
-        CreateNewRecipe.setBounds(51, 149, 300, 160);
+        jPanel1.add(CreateNewRecipeButton);
+        CreateNewRecipeButton.setBounds(51, 149, 300, 160);
 
         AdminMenu.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         AdminMenu.setText("Admin Menu");
@@ -101,17 +101,17 @@ public class AdminControlPanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CreateNewRecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewRecipeActionPerformed
+    private void CreateNewRecipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewRecipeButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CreateNewRecipeActionPerformed
+    }//GEN-LAST:event_CreateNewRecipeButtonActionPerformed
 
-    private void BackToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToLoginActionPerformed
+    private void AdminSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminSignOutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BackToLoginActionPerformed
+    }//GEN-LAST:event_AdminSignOutActionPerformed
 
-    private void DeleteRecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeActionPerformed
+    private void DeleteRecipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteRecipeActionPerformed
+    }//GEN-LAST:event_DeleteRecipeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,9 +150,9 @@ public class AdminControlPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdminMenu;
-    private javax.swing.JButton BackToLogin;
-    private javax.swing.JButton CreateNewRecipe;
-    private javax.swing.JButton DeleteRecipe;
+    private javax.swing.JButton AdminSignOut;
+    private javax.swing.JButton CreateNewRecipeButton;
+    private javax.swing.JButton DeleteRecipeButton;
     private javax.swing.JLabel background5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

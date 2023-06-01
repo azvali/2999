@@ -59,7 +59,7 @@ public class Breakfast extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BreakfastReturnButton);
-        BreakfastReturnButton.setBounds(461, 79, 92, 23);
+        BreakfastReturnButton.setBounds(440, 80, 92, 23);
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
@@ -83,7 +83,7 @@ public class Breakfast extends javax.swing.JFrame {
 
         breakfastDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(breakfastDropDown);
-        breakfastDropDown.setBounds(174, 79, 228, 22);
+        breakfastDropDown.setBounds(212, 79, 190, 22);
 
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\Breakfast Image.png"));
         jPanel2.add(breakfastimage);

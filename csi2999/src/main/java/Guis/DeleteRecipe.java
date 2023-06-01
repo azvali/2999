@@ -27,8 +27,8 @@ public class DeleteRecipe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        CheckRecipeDeleteButton = new javax.swing.JButton();
+        DeleteRecipeIDTextBox = new javax.swing.JTextField();
+        CheckRecipeCheckButton = new javax.swing.JButton();
         labelTextEnter = new javax.swing.JLabel();
         DeleteRecipeButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -46,7 +46,6 @@ public class DeleteRecipe extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 255));
@@ -54,19 +53,19 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(171, 110, 170, 30);
+        jPanel2.add(DeleteRecipeIDTextBox);
+        DeleteRecipeIDTextBox.setBounds(171, 110, 170, 30);
 
-        CheckRecipeDeleteButton.setBackground(new java.awt.Color(255, 204, 204));
-        CheckRecipeDeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CheckRecipeDeleteButton.setText("Check Recipe");
-        jPanel2.add(CheckRecipeDeleteButton);
-        CheckRecipeDeleteButton.setBounds(401, 103, 140, 40);
+        CheckRecipeCheckButton.setBackground(new java.awt.Color(255, 204, 204));
+        CheckRecipeCheckButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CheckRecipeCheckButton.setText("Check Recipe");
+        jPanel2.add(CheckRecipeCheckButton);
+        CheckRecipeCheckButton.setBounds(401, 103, 140, 40);
 
         labelTextEnter.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         labelTextEnter.setText("Enter Recipe ID:");
         jPanel2.add(labelTextEnter);
-        labelTextEnter.setBounds(43, 106, 110, 36);
+        labelTextEnter.setBounds(43, 106, 130, 36);
 
         DeleteRecipeButton.setBackground(new java.awt.Color(255, 102, 102));
         DeleteRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -112,7 +111,7 @@ public class DeleteRecipe extends javax.swing.JFrame {
             }
         });
         jPanel2.add(DeleteRecipeReturnButton);
-        DeleteRecipeReturnButton.setBounds(87, 18, 102, 34);
+        DeleteRecipeReturnButton.setBounds(20, 460, 102, 34);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -178,8 +177,9 @@ public class DeleteRecipe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CheckRecipeDeleteButton;
+    private javax.swing.JButton CheckRecipeCheckButton;
     private javax.swing.JButton DeleteRecipeButton;
+    private javax.swing.JTextField DeleteRecipeIDTextBox;
     private javax.swing.JButton DeleteRecipeReturnButton;
     private javax.swing.JLabel background7;
     private javax.swing.JLabel jLabel1;
@@ -192,7 +192,6 @@ public class DeleteRecipe extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelTextEnter;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,14 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Guis;
 
 /**
  *
- * @author shabe
+ * @author azval
  */
-public class Dinner extends javax.swing.JPanel {
+public class Dinner extends javax.swing.JFrame {
 
     /**
      * Creates new form Dinner
@@ -26,83 +26,135 @@ public class Dinner extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dinner = new javax.swing.JLabel();
-        dinnerDropDown = new javax.swing.JComboBox<>();
-        dinnerReturnButton = new javax.swing.JButton();
-        dinnerHowTo = new javax.swing.JTextField();
-        dinnerDescription = new javax.swing.JTextField();
-        dinnerCookTimes = new javax.swing.JTextField();
-        dinnerIngredients = new javax.swing.JTextField();
-        dinnerimage = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        DinnerDropDown = new javax.swing.JComboBox<>();
+        DinnerReturnButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        DescTextBox = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        HowToTextBox = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        CookTimesTextBox = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        IngredientsTextBox = new javax.swing.JTextArea();
 
-        setMaximumSize(new java.awt.Dimension(800, 500));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
-        setRequestFocusEnabled(false);
-        setVerifyInputWhenFocusTarget(false);
-        setLayout(null);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dinner.setBackground(new java.awt.Color(0, 0, 0));
-        dinner.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        dinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dinner.setText("Dinner Recipes");
-        add(dinner);
-        dinner.setBounds(260, 0, 280, 70);
+        jPanel1.setBackground(new java.awt.Color(51, 102, 0));
 
-        dinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(dinnerDropDown);
-        dinnerDropDown.setBounds(174, 79, 228, 22);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("Dinner");
 
-        dinnerReturnButton.setText("Return");
-        dinnerReturnButton.setName("dinnerReturnButton"); // NOI18N
-        dinnerReturnButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dinnerReturnButtonActionPerformed(evt);
-            }
-        });
-        add(dinnerReturnButton);
-        dinnerReturnButton.setBounds(461, 79, 92, 23);
-        add(dinnerHowTo);
-        dinnerHowTo.setBounds(420, 120, 365, 153);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(358, 358, 358)
+                .addComponent(jLabel1)
+                .addContainerGap(405, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
 
-        dinnerDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                dinnerDescriptionComponentHidden(evt);
-            }
-        });
-        add(dinnerDescription);
-        dinnerDescription.setBounds(26, 120, 376, 153);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        dinnerCookTimes.setForeground(new java.awt.Color(255, 255, 255));
-        dinnerCookTimes.setBorder(null);
-        add(dinnerCookTimes);
-        dinnerCookTimes.setBounds(26, 291, 376, 153);
-        add(dinnerIngredients);
-        dinnerIngredients.setBounds(420, 291, 365, 153);
+        jPanel2.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\Dinner Image.png"));
-        dinnerimage.setPreferredSize(new java.awt.Dimension(800, 500));
-        add(dinnerimage);
-        dinnerimage.setBounds(0, 0, 800, 500);
+        DinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(DinnerDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 160, -1));
+
+        DinnerReturnButton.setText("Return");
+        jPanel2.add(DinnerReturnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
+
+        DescTextBox.setColumns(20);
+        DescTextBox.setRows(5);
+        jScrollPane2.setViewportView(DescTextBox);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 380, 140));
+
+        HowToTextBox.setColumns(20);
+        HowToTextBox.setRows(5);
+        jScrollPane3.setViewportView(HowToTextBox);
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 380, 140));
+
+        CookTimesTextBox.setColumns(20);
+        CookTimesTextBox.setRows(5);
+        jScrollPane4.setViewportView(CookTimesTextBox);
+
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 380, 140));
+
+        IngredientsTextBox.setColumns(20);
+        IngredientsTextBox.setRows(5);
+        jScrollPane5.setViewportView(IngredientsTextBox);
+
+        jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 380, 140));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 800, 400));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dinnerReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerReturnButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dinnerReturnButtonActionPerformed
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Dinner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Dinner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Dinner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Dinner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-    private void dinnerDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_dinnerDescriptionComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dinnerDescriptionComponentHidden
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Dinner().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dinner;
-    private javax.swing.JTextField dinnerCookTimes;
-    private javax.swing.JTextField dinnerDescription;
-    private javax.swing.JComboBox<String> dinnerDropDown;
-    private javax.swing.JTextField dinnerHowTo;
-    private javax.swing.JTextField dinnerIngredients;
-    private javax.swing.JButton dinnerReturnButton;
-    private javax.swing.JLabel dinnerimage;
+    private javax.swing.JTextArea CookTimesTextBox;
+    private javax.swing.JTextArea DescTextBox;
+    private javax.swing.JComboBox<String> DinnerDropDown;
+    private javax.swing.JButton DinnerReturnButton;
+    private javax.swing.JTextArea HowToTextBox;
+    private javax.swing.JTextArea IngredientsTextBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
 }

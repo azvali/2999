@@ -40,7 +40,6 @@ public class Lunch extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 102, 102));
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 204));
@@ -83,7 +82,7 @@ public class Lunch extends javax.swing.JFrame {
         lunch.setBackground(new java.awt.Color(0, 0, 0));
         lunch.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         lunch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lunch.setText("Lunch Recipes");
+        lunch.setText("Lunch");
         jPanel2.add(lunch);
         lunch.setBounds(260, 0, 280, 70);
 

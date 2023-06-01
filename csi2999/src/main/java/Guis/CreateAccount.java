@@ -27,15 +27,15 @@ public class CreateAccount extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        reenter_field = new javax.swing.JPasswordField();
-        password_tfield = new javax.swing.JPasswordField();
+        ReEnterPasswordTextBox = new javax.swing.JPasswordField();
+        PasswordTextBox = new javax.swing.JPasswordField();
         createaccount_label = new javax.swing.JLabel();
         reenter_label = new javax.swing.JLabel();
-        username_tfield = new javax.swing.JTextField();
-        createaccount_button = new javax.swing.JButton();
+        UsernameTextBox = new javax.swing.JTextField();
+        CreateAccountReturnButton = new javax.swing.JButton();
         password_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        createaccount_button1 = new javax.swing.JButton();
+        CreateAccountActionButton = new javax.swing.JButton();
         background2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,13 +47,13 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        reenter_field.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(reenter_field);
-        reenter_field.setBounds(428, 241, 150, 21);
+        ReEnterPasswordTextBox.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(ReEnterPasswordTextBox);
+        ReEnterPasswordTextBox.setBounds(428, 241, 150, 21);
 
-        password_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(password_tfield);
-        password_tfield.setBounds(428, 205, 150, 23);
+        PasswordTextBox.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(PasswordTextBox);
+        PasswordTextBox.setBounds(428, 205, 150, 23);
 
         createaccount_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         createaccount_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -64,22 +64,22 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 127, 20);
+        reenter_label.setBounds(264, 239, 130, 20);
 
-        username_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(username_tfield);
-        username_tfield.setBounds(428, 172, 150, 21);
+        UsernameTextBox.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(UsernameTextBox);
+        UsernameTextBox.setBounds(428, 172, 150, 21);
 
-        createaccount_button.setBackground(new java.awt.Color(153, 153, 153));
-        createaccount_button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        createaccount_button.setText("Return");
-        createaccount_button.addActionListener(new java.awt.event.ActionListener() {
+        CreateAccountReturnButton.setBackground(new java.awt.Color(153, 153, 153));
+        CreateAccountReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CreateAccountReturnButton.setText("Return");
+        CreateAccountReturnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createaccount_buttonActionPerformed(evt);
+                CreateAccountReturnButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(createaccount_button);
-        createaccount_button.setBounds(213, 305, 178, 51);
+        jPanel1.add(CreateAccountReturnButton);
+        CreateAccountReturnButton.setBounds(213, 305, 178, 51);
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         password_label.setText("Password:");
@@ -91,11 +91,11 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.add(username_label);
         username_label.setBounds(264, 170, 100, 20);
 
-        createaccount_button1.setBackground(new java.awt.Color(153, 153, 153));
-        createaccount_button1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        createaccount_button1.setText("Create Account");
-        jPanel1.add(createaccount_button1);
-        createaccount_button1.setBounds(410, 306, 178, 51);
+        CreateAccountActionButton.setBackground(new java.awt.Color(153, 153, 153));
+        CreateAccountActionButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CreateAccountActionButton.setText("Create Account");
+        jPanel1.add(CreateAccountActionButton);
+        CreateAccountActionButton.setBounds(410, 306, 178, 51);
 
         background2.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel1.add(background2);
@@ -115,9 +115,9 @@ public class CreateAccount extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createaccount_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccount_buttonActionPerformed
+    private void CreateAccountReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountReturnButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_createaccount_buttonActionPerformed
+    }//GEN-LAST:event_CreateAccountReturnButtonActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -155,16 +155,16 @@ public class CreateAccount extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CreateAccountActionButton;
+    private javax.swing.JButton CreateAccountReturnButton;
+    private javax.swing.JPasswordField PasswordTextBox;
+    private javax.swing.JPasswordField ReEnterPasswordTextBox;
+    private javax.swing.JTextField UsernameTextBox;
     private javax.swing.JLabel background2;
-    private javax.swing.JButton createaccount_button;
-    private javax.swing.JButton createaccount_button1;
     private javax.swing.JLabel createaccount_label;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel password_label;
-    private javax.swing.JPasswordField password_tfield;
-    private javax.swing.JPasswordField reenter_field;
     private javax.swing.JLabel reenter_label;
     private javax.swing.JLabel username_label;
-    private javax.swing.JTextField username_tfield;
     // End of variables declaration//GEN-END:variables
 }

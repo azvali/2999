@@ -4,6 +4,8 @@
  */
 package Guis;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author azval
@@ -32,13 +34,13 @@ public class Login extends javax.swing.JFrame {
         buttonGroup4 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         EnterPassword = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        PasswordTextBox = new javax.swing.JPasswordField();
         LoginIntro = new javax.swing.JLabel();
         EnterUsername = new javax.swing.JLabel();
-        CreateANewAccount = new javax.swing.JButton();
+        CreateAccountButton = new javax.swing.JButton();
         EnterButton = new javax.swing.JButton();
-        Exit = new javax.swing.JButton();
-        EnterPasswordBox = new javax.swing.JPasswordField();
+        ExitButton = new javax.swing.JButton();
+        UsernameTextBox = new javax.swing.JPasswordField();
         welcome = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -58,8 +60,8 @@ public class Login extends javax.swing.JFrame {
         EnterPassword.setText("Enter Password:");
         jPanel1.add(EnterPassword);
         EnterPassword.setBounds(277, 204, 110, 20);
-        jPanel1.add(jPasswordField1);
-        jPasswordField1.setBounds(408, 204, 119, 22);
+        jPanel1.add(PasswordTextBox);
+        PasswordTextBox.setBounds(408, 204, 119, 22);
 
         LoginIntro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LoginIntro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -72,30 +74,41 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(EnterUsername);
         EnterUsername.setBounds(277, 169, 101, 20);
 
-        CreateANewAccount.setBackground(new java.awt.Color(255, 255, 153));
-        CreateANewAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        CreateANewAccount.setText("Create a New Account");
-        CreateANewAccount.addActionListener(new java.awt.event.ActionListener() {
+        CreateAccountButton.setBackground(new java.awt.Color(255, 255, 153));
+        CreateAccountButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CreateAccountButton.setText("Create a New Account");
+        CreateAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateANewAccountActionPerformed(evt);
+                CreateAccountButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(CreateANewAccount);
-        CreateANewAccount.setBounds(277, 265, 220, 32);
+        jPanel1.add(CreateAccountButton);
+        CreateAccountButton.setBounds(277, 265, 220, 32);
 
         EnterButton.setBackground(new java.awt.Color(0, 204, 0));
         EnterButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         EnterButton.setText("Enter");
+        EnterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnterButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(EnterButton);
         EnterButton.setBounds(155, 265, 72, 32);
 
-        Exit.setBackground(new java.awt.Color(255, 51, 51));
-        Exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Exit.setText("Exit");
-        jPanel1.add(Exit);
-        Exit.setBounds(534, 265, 80, 30);
-        jPanel1.add(EnterPasswordBox);
-        EnterPasswordBox.setBounds(408, 169, 119, 22);
+        ExitButton.setBackground(new java.awt.Color(255, 51, 51));
+        ExitButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ExitButton.setText("Exit");
+        jPanel1.add(ExitButton);
+        ExitButton.setBounds(534, 265, 80, 30);
+
+        UsernameTextBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameTextBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(UsernameTextBox);
+        UsernameTextBox.setBounds(408, 169, 119, 22);
 
         welcome.setBackground(new java.awt.Color(102, 51, 255));
         welcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -122,10 +135,36 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CreateANewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateANewAccountActionPerformed
+    private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_CreateANewAccountActionPerformed
+    }//GEN-LAST:event_CreateAccountButtonActionPerformed
+
+    private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
+        // TEMPORARY Login Button Functionality
+        String user = UsernameTextBox.getText();
+        String password = PasswordTextBox.getText();
+        
+        if(user.equals("admin") && password.equals("1234")){
+                dispose();
+                AdminControlPanel AdminPage = new AdminControlPanel();
+                AdminPage.setVisible(true);
+                
+            }
+            else if(user.equals("customer") && password.equals("1234")){
+                dispose();
+                UserMain UserPage = new UserMain();
+                UserPage.setVisible(true);
+                
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Incorrect username/password");
+            }
+    }//GEN-LAST:event_EnterButtonActionPerformed
+
+    private void UsernameTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameTextBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,20 +202,20 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CreateANewAccount;
+    private javax.swing.JButton CreateAccountButton;
     private javax.swing.JButton EnterButton;
     private javax.swing.JLabel EnterPassword;
-    private javax.swing.JPasswordField EnterPasswordBox;
     private javax.swing.JLabel EnterUsername;
-    private javax.swing.JButton Exit;
+    private javax.swing.JButton ExitButton;
     private javax.swing.JLabel LoginIntro;
+    private javax.swing.JPasswordField PasswordTextBox;
+    private javax.swing.JPasswordField UsernameTextBox;
     private javax.swing.JLabel background;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }
