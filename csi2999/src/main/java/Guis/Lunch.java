@@ -26,95 +26,92 @@ public class Lunch extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        LunchListDropDown = new javax.swing.JComboBox<>();
-        LunchReturnButton = new javax.swing.JButton();
-        DescriptionTxt = new javax.swing.JTextField();
-        HowToCookTxt = new javax.swing.JTextField();
-        IngredientsTxt = new javax.swing.JTextField();
-        CookTimesTxt = new javax.swing.JTextField();
+        LunchDescription = new javax.swing.JTextField();
+        LunchHowTo = new javax.swing.JTextField();
+        LunchIngredients = new javax.swing.JTextField();
+        LunchCookTimes = new javax.swing.JTextField();
+        lunchDropDown = new javax.swing.JComboBox<>();
+        lunchReturnButton = new javax.swing.JButton();
+        lunch = new javax.swing.JLabel();
+        lunchimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 102));
+        setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 51, 0));
-        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Lunch");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 34, -1, -1));
-
         jPanel2.setBackground(new java.awt.Color(102, 255, 204));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setMaximumSize(new java.awt.Dimension(800, 500));
+        jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
+        jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel2.setLayout(null);
 
-        LunchListDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(LunchListDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
-
-        LunchReturnButton.setText("Return");
-        jPanel2.add(LunchReturnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
-
-        DescriptionTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        DescriptionTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(DescriptionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 387, 151));
-
-        HowToCookTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        HowToCookTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        HowToCookTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HowToCookTxtActionPerformed(evt);
+        LunchDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                LunchDescriptionComponentHidden(evt);
             }
         });
-        jPanel2.add(HowToCookTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 383, 151));
+        jPanel2.add(LunchDescription);
+        LunchDescription.setBounds(26, 120, 376, 153);
+        jPanel2.add(LunchHowTo);
+        LunchHowTo.setBounds(420, 120, 365, 153);
+        jPanel2.add(LunchIngredients);
+        LunchIngredients.setBounds(420, 291, 365, 153);
 
-        IngredientsTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        IngredientsTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        IngredientsTxt.addActionListener(new java.awt.event.ActionListener() {
+        LunchCookTimes.setForeground(new java.awt.Color(255, 255, 255));
+        LunchCookTimes.setBorder(null);
+        jPanel2.add(LunchCookTimes);
+        LunchCookTimes.setBounds(26, 291, 376, 153);
+
+        lunchDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(lunchDropDown);
+        lunchDropDown.setBounds(174, 79, 228, 22);
+
+        lunchReturnButton.setText("Return");
+        lunchReturnButton.setName("lunchReturnButton"); // NOI18N
+        lunchReturnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngredientsTxtActionPerformed(evt);
+                lunchReturnButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(IngredientsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 383, 156));
+        jPanel2.add(lunchReturnButton);
+        lunchReturnButton.setBounds(461, 79, 92, 23);
 
-        CookTimesTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        CookTimesTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(CookTimesTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 387, 150));
+        lunch.setBackground(new java.awt.Color(0, 0, 0));
+        lunch.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        lunch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lunch.setText("Lunch Recipes");
+        jPanel2.add(lunch);
+        lunch.setBounds(260, 0, 280, 70);
+
+        lunchimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\Lunch Image.png"));
+        jPanel2.add(lunchimage);
+        lunchimage.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void HowToCookTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HowToCookTxtActionPerformed
+    private void LunchDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_LunchDescriptionComponentHidden
         // TODO add your handling code here:
-    }//GEN-LAST:event_HowToCookTxtActionPerformed
+    }//GEN-LAST:event_LunchDescriptionComponentHidden
 
-    private void IngredientsTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngredientsTxtActionPerformed
+    private void lunchReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lunchReturnButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IngredientsTxtActionPerformed
+    }//GEN-LAST:event_lunchReturnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,14 +149,14 @@ public class Lunch extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CookTimesTxt;
-    private javax.swing.JTextField DescriptionTxt;
-    private javax.swing.JTextField HowToCookTxt;
-    private javax.swing.JTextField IngredientsTxt;
-    private javax.swing.JComboBox<String> LunchListDropDown;
-    private javax.swing.JButton LunchReturnButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField LunchCookTimes;
+    private javax.swing.JTextField LunchDescription;
+    private javax.swing.JTextField LunchHowTo;
+    private javax.swing.JTextField LunchIngredients;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lunch;
+    private javax.swing.JComboBox<String> lunchDropDown;
+    private javax.swing.JButton lunchReturnButton;
+    private javax.swing.JLabel lunchimage;
     // End of variables declaration//GEN-END:variables
 }

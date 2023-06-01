@@ -97,8 +97,7 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.add(createaccount_button1);
         createaccount_button1.setBounds(410, 306, 178, 51);
 
-        background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Guis/background2.png"))); // NOI18N
-        background2.setText("jLabel2");
+        background2.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel1.add(background2);
         background2.setBounds(0, 0, 800, 500);
 

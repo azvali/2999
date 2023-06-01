@@ -26,64 +26,77 @@ public class AdminControlPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AdminMenu = new javax.swing.JLabel();
-        CreateNewRecipe = new javax.swing.JButton();
-        DeleteRecipe = new javax.swing.JButton();
-        BackToLogin = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        BackToLogin = new javax.swing.JButton();
+        DeleteRecipe = new javax.swing.JButton();
+        CreateNewRecipe = new javax.swing.JButton();
+        AdminMenu = new javax.swing.JLabel();
+        background5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AdminMenu.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        AdminMenu.setText("Admin Menu");
-        getContentPane().add(AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 6, 270, 90));
-
-        CreateNewRecipe.setBackground(new java.awt.Color(153, 255, 153));
-        CreateNewRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        CreateNewRecipe.setText("Create New Recipe");
-        CreateNewRecipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateNewRecipeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CreateNewRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 120, 300, 160));
-
-        DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
-        DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        DeleteRecipe.setText("Delete Existing Recipe");
-        DeleteRecipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteRecipeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DeleteRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 120, 300, 160));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel1.setFocusable(false);
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(null);
 
         BackToLogin.setBackground(new java.awt.Color(204, 204, 255));
-        BackToLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BackToLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         BackToLogin.setText("Back to Login");
         BackToLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackToLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(BackToLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 315, 220, 120));
+        jPanel1.add(BackToLogin);
+        BackToLogin.setBounds(293, 344, 220, 120);
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 204));
+        DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
+        DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        DeleteRecipe.setText("Delete Existing Recipe");
+        DeleteRecipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteRecipeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DeleteRecipe);
+        DeleteRecipe.setBounds(448, 149, 300, 160);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        CreateNewRecipe.setBackground(new java.awt.Color(153, 255, 153));
+        CreateNewRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CreateNewRecipe.setText("Create New Recipe");
+        CreateNewRecipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateNewRecipeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CreateNewRecipe);
+        CreateNewRecipe.setBounds(51, 149, 300, 160);
+
+        AdminMenu.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        AdminMenu.setText("Admin Menu");
+        jPanel1.add(AdminMenu);
+        AdminMenu.setBounds(287, 35, 270, 90);
+
+        background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\background5.png"));
+        jPanel1.add(background5);
+        background5.setBounds(0, 0, 800, 500);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,6 +153,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
     private javax.swing.JButton BackToLogin;
     private javax.swing.JButton CreateNewRecipe;
     private javax.swing.JButton DeleteRecipe;
+    private javax.swing.JLabel background5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

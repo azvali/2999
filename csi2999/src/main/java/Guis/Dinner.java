@@ -26,123 +26,83 @@ public class Dinner extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        DescriptionTxt = new javax.swing.JTextField();
-        HowToCookTxt = new javax.swing.JTextField();
-        IngredientsTxt = new javax.swing.JTextField();
-        CookTimesTxt = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        DinnerDropMenu = new javax.swing.JComboBox<>();
-        DinnerReturnButton = new javax.swing.JButton();
+        dinner = new javax.swing.JLabel();
+        dinnerDropDown = new javax.swing.JComboBox<>();
+        dinnerReturnButton = new javax.swing.JButton();
+        dinnerHowTo = new javax.swing.JTextField();
+        dinnerDescription = new javax.swing.JTextField();
+        dinnerCookTimes = new javax.swing.JTextField();
+        dinnerIngredients = new javax.swing.JTextField();
+        dinnerimage = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setRequestFocusEnabled(false);
         setVerifyInputWhenFocusTarget(false);
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Dinner Recipes");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, 61));
+        dinner.setBackground(new java.awt.Color(0, 0, 0));
+        dinner.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        dinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dinner.setText("Dinner Recipes");
+        add(dinner);
+        dinner.setBounds(260, 0, 280, 70);
 
-        DescriptionTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        DescriptionTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(DescriptionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 168, 387, 151));
+        dinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(dinnerDropDown);
+        dinnerDropDown.setBounds(174, 79, 228, 22);
 
-        HowToCookTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        HowToCookTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        HowToCookTxt.addActionListener(new java.awt.event.ActionListener() {
+        dinnerReturnButton.setText("Return");
+        dinnerReturnButton.setName("dinnerReturnButton"); // NOI18N
+        dinnerReturnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HowToCookTxtActionPerformed(evt);
+                dinnerReturnButtonActionPerformed(evt);
             }
         });
-        add(HowToCookTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 168, 383, 151));
+        add(dinnerReturnButton);
+        dinnerReturnButton.setBounds(461, 79, 92, 23);
+        add(dinnerHowTo);
+        dinnerHowTo.setBounds(420, 120, 365, 153);
 
-        IngredientsTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        IngredientsTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        IngredientsTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngredientsTxtActionPerformed(evt);
+        dinnerDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                dinnerDescriptionComponentHidden(evt);
             }
         });
-        add(IngredientsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 325, 383, 156));
+        add(dinnerDescription);
+        dinnerDescription.setBounds(26, 120, 376, 153);
 
-        CookTimesTxt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        CookTimesTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(CookTimesTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 331, 387, 150));
+        dinnerCookTimes.setForeground(new java.awt.Color(255, 255, 255));
+        dinnerCookTimes.setBorder(null);
+        add(dinnerCookTimes);
+        dinnerCookTimes.setBounds(26, 291, 376, 153);
+        add(dinnerIngredients);
+        dinnerIngredients.setBounds(420, 291, 365, 153);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-
-        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        DinnerDropMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        DinnerDropMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DinnerDropMenuActionPerformed(evt);
-            }
-        });
-
-        DinnerReturnButton.setText("Return");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(DinnerDropMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(DinnerReturnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DinnerDropMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DinnerReturnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 355, Short.MAX_VALUE))
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\Dinner Image.png"));
+        dinnerimage.setPreferredSize(new java.awt.Dimension(800, 500));
+        add(dinnerimage);
+        dinnerimage.setBounds(0, 0, 800, 500);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IngredientsTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngredientsTxtActionPerformed
+    private void dinnerReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerReturnButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IngredientsTxtActionPerformed
+    }//GEN-LAST:event_dinnerReturnButtonActionPerformed
 
-    private void DinnerDropMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DinnerDropMenuActionPerformed
+    private void dinnerDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_dinnerDescriptionComponentHidden
         // TODO add your handling code here:
-    }//GEN-LAST:event_DinnerDropMenuActionPerformed
-
-    private void HowToCookTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HowToCookTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HowToCookTxtActionPerformed
+    }//GEN-LAST:event_dinnerDescriptionComponentHidden
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CookTimesTxt;
-    private javax.swing.JTextField DescriptionTxt;
-    private javax.swing.JComboBox<String> DinnerDropMenu;
-    private javax.swing.JButton DinnerReturnButton;
-    private javax.swing.JTextField HowToCookTxt;
-    private javax.swing.JTextField IngredientsTxt;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel dinner;
+    private javax.swing.JTextField dinnerCookTimes;
+    private javax.swing.JTextField dinnerDescription;
+    private javax.swing.JComboBox<String> dinnerDropDown;
+    private javax.swing.JTextField dinnerHowTo;
+    private javax.swing.JTextField dinnerIngredients;
+    private javax.swing.JButton dinnerReturnButton;
+    private javax.swing.JLabel dinnerimage;
     // End of variables declaration//GEN-END:variables
 }

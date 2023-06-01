@@ -84,8 +84,7 @@ public class UserMain extends javax.swing.JFrame {
         jPanel1.add(bookmarks_label);
         bookmarks_label.setBounds(440, 171, 174, 76);
 
-        background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Guis/background3.png"))); // NOI18N
-        background3.setText("jLabel1");
+        background3.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
         jPanel1.add(background3);
         background3.setBounds(0, 0, 800, 500);
 

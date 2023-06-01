@@ -26,38 +26,86 @@ public class CreateRecipe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DescriptionTextBox = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        IngredientsTextBox = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        CookTimesTextBox = new javax.swing.JTextField();
-        HowToCookTextBox = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        SubmitButton = new javax.swing.JButton();
-        ExitButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         RecipeIDTextBox = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        ExitButton = new javax.swing.JButton();
+        SubmitButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        HowToCookTextBox = new javax.swing.JTextField();
+        CookTimesTextBox = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        IngredientsTextBox = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        DescriptionTextBox = new javax.swing.JTextField();
+        background6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DescriptionTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
-        DescriptionTextBox.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Create Recipe");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(266, 24, 260, 60);
+
+        RecipeIDTextBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DescriptionTextBoxActionPerformed(evt);
+                RecipeIDTextBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(DescriptionTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 644, 40));
+        jPanel1.add(RecipeIDTextBox);
+        RecipeIDTextBox.setBounds(130, 170, 170, 22);
 
-        jLabel2.setText("Description:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 184, -1, -1));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(894, 196, -1, -1));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Recipe I.D:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(40, 170, 80, 20);
+
+        ExitButton.setBackground(new java.awt.Color(255, 51, 51));
+        ExitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExitButton.setText("Return");
+        jPanel1.add(ExitButton);
+        ExitButton.setBounds(390, 460, 90, 30);
+
+        SubmitButton.setBackground(new java.awt.Color(153, 255, 153));
+        SubmitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SubmitButton.setText("Submit");
+        jPanel1.add(SubmitButton);
+        SubmitButton.setBounds(260, 460, 90, 30);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setText("Ingredients:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(38, 278, 79, 25);
+
+        HowToCookTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
+        jPanel1.add(HowToCookTextBox);
+        HowToCookTextBox.setBounds(130, 380, 642, 47);
+
+        CookTimesTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
+        jPanel1.add(CookTimesTextBox);
+        CookTimesTextBox.setBounds(130, 330, 642, 40);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("How to cook:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(38, 393, 100, 30);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Cook Times:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(38, 336, 90, 25);
 
         IngredientsTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         IngredientsTextBox.addActionListener(new java.awt.event.ActionListener() {
@@ -65,62 +113,40 @@ public class CreateRecipe extends javax.swing.JFrame {
                 IngredientsTextBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(IngredientsTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 642, 40));
+        jPanel1.add(IngredientsTextBox);
+        IngredientsTextBox.setBounds(130, 270, 642, 40);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 0, 0);
 
-        jLabel4.setText("Cook Times:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Description:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(38, 220, 80, 20);
 
-        jLabel5.setText("How to cook:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
-
-        CookTimesTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
-        getContentPane().add(CookTimesTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 642, 40));
-
-        HowToCookTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
-        getContentPane().add(HowToCookTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 642, 35));
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Create recipe");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(325, 325, 325)
-                .addComponent(jLabel1)
-                .addContainerGap(419, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel6.setText("Ingredients:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
-
-        SubmitButton.setText("Submit");
-        getContentPane().add(SubmitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 442, -1, -1));
-
-        ExitButton.setText("Return");
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 442, -1, -1));
-
-        jLabel7.setText("Recipe I.D:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 130, -1, -1));
-
-        RecipeIDTextBox.addActionListener(new java.awt.event.ActionListener() {
+        DescriptionTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
+        DescriptionTextBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RecipeIDTextBoxActionPerformed(evt);
+                DescriptionTextBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(RecipeIDTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 127, 170, -1));
+        jPanel1.add(DescriptionTextBox);
+        DescriptionTextBox.setBounds(130, 210, 644, 40);
+
+        background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\background6.png"));
+        background6.setOpaque(true);
+        jPanel1.add(background6);
+        background6.setBounds(0, 0, 800, 500);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,6 +206,7 @@ public class CreateRecipe extends javax.swing.JFrame {
     private javax.swing.JTextField IngredientsTextBox;
     private javax.swing.JTextField RecipeIDTextBox;
     private javax.swing.JButton SubmitButton;
+    private javax.swing.JLabel background6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

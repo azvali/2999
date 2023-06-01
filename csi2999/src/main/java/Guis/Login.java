@@ -104,8 +104,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(welcome);
         welcome.setBounds(150, 0, 520, 90);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Guis/background.png"))); // NOI18N
-        background.setText("jLabel1");
+        background.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background.png"));
         jPanel1.add(background);
         background.setBounds(0, 0, 800, 500);
 

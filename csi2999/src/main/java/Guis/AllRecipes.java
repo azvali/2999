@@ -26,26 +26,34 @@ public class AllRecipes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        appetizersButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         allRecipesLabel = new javax.swing.JLabel();
         homeButton = new javax.swing.JButton();
-        appetizersButton1 = new javax.swing.JButton();
         appetizersButton2 = new javax.swing.JButton();
-        appetizersButton3 = new javax.swing.JButton();
+        appetizersButton1 = new javax.swing.JButton();
+        appetizersButton = new javax.swing.JButton();
+        background4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        appetizersButton.setText("Lunch");
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 0));
         jPanel1.setForeground(new java.awt.Color(204, 204, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1.setLayout(null);
 
         allRecipesLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        allRecipesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         allRecipesLabel.setText("All Recipes");
-        jPanel1.add(allRecipesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 120, 40));
+        jPanel1.add(allRecipesLabel);
+        allRecipesLabel.setBounds(300, 10, 180, 60);
 
+        homeButton.setBackground(new java.awt.Color(153, 51, 0));
+        homeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         homeButton.setLabel("Home");
         homeButton.setName("homeButton"); // NOI18N
         homeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -53,48 +61,42 @@ public class AllRecipes extends javax.swing.JFrame {
                 homeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(homeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(homeButton);
+        homeButton.setBounds(110, 20, 110, 40);
 
-        appetizersButton1.setText("Dinner");
-        appetizersButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appetizersButton1ActionPerformed(evt);
-            }
-        });
-
+        appetizersButton2.setBackground(new java.awt.Color(255, 153, 102));
+        appetizersButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         appetizersButton2.setText("Breakfast");
+        jPanel1.add(appetizersButton2);
+        appetizersButton2.setBounds(150, 110, 200, 110);
 
-        appetizersButton3.setText("Appetizers");
+        appetizersButton1.setBackground(new java.awt.Color(204, 153, 0));
+        appetizersButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appetizersButton1.setText("Dinner");
+        jPanel1.add(appetizersButton1);
+        appetizersButton1.setBounds(300, 260, 200, 110);
+
+        appetizersButton.setBackground(new java.awt.Color(255, 153, 51));
+        appetizersButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appetizersButton.setText("Lunch");
+        jPanel1.add(appetizersButton);
+        appetizersButton.setBounds(440, 110, 200, 110);
+
+        background4.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
+        jPanel1.add(background4);
+        background4.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(appetizersButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appetizersButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(132, 132, 132)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(appetizersButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appetizersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(121, 121, 121))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(appetizersButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appetizersButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(appetizersButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appetizersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -103,10 +105,6 @@ public class AllRecipes extends javax.swing.JFrame {
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_homeButtonActionPerformed
-
-    private void appetizersButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appetizersButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_appetizersButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,7 +146,7 @@ public class AllRecipes extends javax.swing.JFrame {
     private javax.swing.JButton appetizersButton;
     private javax.swing.JButton appetizersButton1;
     private javax.swing.JButton appetizersButton2;
-    private javax.swing.JButton appetizersButton3;
+    private javax.swing.JLabel background4;
     private javax.swing.JButton homeButton;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
