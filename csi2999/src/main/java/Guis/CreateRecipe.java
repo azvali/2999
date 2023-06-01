@@ -109,7 +109,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         SubmitButton.setText("Submit");
         getContentPane().add(SubmitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 442, -1, -1));
 
-        ExitButton.setText("Exit");
+        ExitButton.setText("Return");
         getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 442, -1, -1));
 
         jLabel7.setText("Recipe I.D:");
