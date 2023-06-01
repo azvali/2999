@@ -79,6 +79,7 @@ public class Dinner extends javax.swing.JFrame {
 
         dinner.setBackground(new java.awt.Color(153, 255, 153));
         dinner.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        dinner.setForeground(new java.awt.Color(102, 255, 153));
         dinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dinner.setText("Dinner Recipes");
         jPanel1.add(dinner);

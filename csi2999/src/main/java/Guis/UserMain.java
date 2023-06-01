@@ -57,6 +57,7 @@ public class UserMain extends javax.swing.JFrame {
 
         mainmenu_label.setBackground(new java.awt.Color(255, 255, 0));
         mainmenu_label.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        mainmenu_label.setForeground(new java.awt.Color(153, 255, 153));
         mainmenu_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mainmenu_label.setText("Main Menu");
         jPanel1.add(mainmenu_label);

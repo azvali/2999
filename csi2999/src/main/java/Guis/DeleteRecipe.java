@@ -73,10 +73,11 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.add(CheckRecipeDeleteButton);
         CheckRecipeDeleteButton.setBounds(401, 103, 140, 40);
 
-        labelTextEnter.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        labelTextEnter.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        labelTextEnter.setForeground(new java.awt.Color(255, 0, 204));
         labelTextEnter.setText("Enter Recipe ID:");
         jPanel2.add(labelTextEnter);
-        labelTextEnter.setBounds(43, 106, 120, 36);
+        labelTextEnter.setBounds(13, 106, 150, 36);
 
         DeleteRecipeButton.setBackground(new java.awt.Color(255, 102, 102));
         DeleteRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

@@ -54,6 +54,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create Recipe");
         jPanel1.add(jLabel1);
@@ -68,6 +69,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         RecipeIDTextBox.setBounds(130, 170, 170, 22);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 255, 204));
         jLabel7.setText("Recipe I.D:");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(40, 170, 80, 20);
@@ -95,6 +97,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         SubmitButton.setBounds(260, 460, 90, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 255, 204));
         jLabel6.setText("Ingredients:");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(38, 278, 79, 25);
@@ -108,11 +111,13 @@ public class CreateRecipe extends javax.swing.JFrame {
         CookTimesTextBox.setBounds(130, 330, 642, 40);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 255, 204));
         jLabel5.setText("How to cook:");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(38, 393, 100, 30);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 255, 204));
         jLabel4.setText("Cook Times:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(38, 336, 90, 25);
@@ -129,6 +134,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jLabel3.setBounds(0, 0, 0, 0);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 255, 204));
         jLabel2.setText("Description:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(38, 220, 80, 20);

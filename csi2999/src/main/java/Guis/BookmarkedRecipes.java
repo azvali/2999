@@ -80,6 +80,7 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         BookmarksReturnButton.setBounds(443, 154, 96, 27);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 255));
         jLabel1.setText("Bookmarks");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(288, 33, 200, 48);

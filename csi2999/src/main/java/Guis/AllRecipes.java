@@ -48,7 +48,9 @@ public class AllRecipes extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
+        allRecipesLabel.setBackground(new java.awt.Color(255, 255, 255));
         allRecipesLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        allRecipesLabel.setForeground(new java.awt.Color(255, 255, 204));
         allRecipesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         allRecipesLabel.setText("All Recipes");
         jPanel1.add(allRecipesLabel);
