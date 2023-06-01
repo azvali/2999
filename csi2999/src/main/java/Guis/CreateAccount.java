@@ -55,7 +55,8 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.add(password_tfield);
         password_tfield.setBounds(428, 205, 150, 23);
 
-        createaccount_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        createaccount_label.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        createaccount_label.setForeground(new java.awt.Color(255, 153, 153));
         createaccount_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createaccount_label.setText("CREATE ACCOUNT");
         jPanel1.add(createaccount_label);
@@ -64,7 +65,7 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 130, 20);
+        reenter_label.setBounds(264, 239, 127, 20);
 
         username_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanel1.add(username_tfield);

@@ -74,7 +74,7 @@ public class DeleteRecipe extends javax.swing.JFrame {
         CheckRecipeDeleteButton.setBounds(401, 103, 140, 40);
 
         labelTextEnter.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        labelTextEnter.setForeground(new java.awt.Color(255, 0, 204));
+        labelTextEnter.setForeground(new java.awt.Color(153, 255, 153));
         labelTextEnter.setText("Enter Recipe ID:");
         jPanel2.add(labelTextEnter);
         labelTextEnter.setBounds(13, 106, 150, 36);
@@ -130,13 +130,14 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.add(DeleteRecipeReturnButton);
         DeleteRecipeReturnButton.setBounds(87, 18, 102, 34);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Delete Recipe");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(268, 6, 258, 60);
 
-        background7.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background7.png"));
+        background7.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background4.png"));
         jPanel2.add(background7);
         background7.setBounds(0, 0, 800, 500);
 

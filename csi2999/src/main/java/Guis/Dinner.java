@@ -78,14 +78,14 @@ public class Dinner extends javax.swing.JFrame {
         dinnerDropDown.setBounds(174, 79, 228, 22);
 
         dinner.setBackground(new java.awt.Color(153, 255, 153));
-        dinner.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        dinner.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         dinner.setForeground(new java.awt.Color(102, 255, 153));
         dinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dinner.setText("Dinner Recipes");
         jPanel1.add(dinner);
         dinner.setBounds(260, 0, 270, 60);
 
-        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\Dinner Image.png"));
+        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
         jPanel1.add(dinnerimage);
         dinnerimage.setBounds(0, 0, 800, 500);
 

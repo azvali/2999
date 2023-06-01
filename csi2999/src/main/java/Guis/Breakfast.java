@@ -62,8 +62,8 @@ public class Breakfast extends javax.swing.JFrame {
         BreakfastReturnButton.setBounds(461, 79, 92, 23);
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Breakfast");
         jPanel2.add(jLabel1);
@@ -86,7 +86,7 @@ public class Breakfast extends javax.swing.JFrame {
         jPanel2.add(breakfastDropDown);
         breakfastDropDown.setBounds(174, 79, 228, 22);
 
-        breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\Breakfast Image.png"));
+        breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);
         breakfastimage.setBounds(0, 0, 800, 500);
 

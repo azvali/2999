@@ -53,8 +53,8 @@ public class CreateRecipe extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 255, 204));
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create Recipe");
         jPanel1.add(jLabel1);
@@ -148,7 +148,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jPanel1.add(DescriptionTextBox);
         DescriptionTextBox.setBounds(130, 210, 644, 40);
 
-        background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background6.png"));
+        background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
         jPanel1.add(background6);
         background6.setBounds(0, 0, 800, 500);
 

@@ -77,7 +77,8 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jPanel1.add(CreateNewRecipe);
         CreateNewRecipe.setBounds(51, 149, 300, 160);
 
-        AdminMenu.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        AdminMenu.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        AdminMenu.setForeground(new java.awt.Color(255, 255, 153));
         AdminMenu.setText("Admin Menu");
         jPanel1.add(AdminMenu);
         AdminMenu.setBounds(287, 35, 270, 90);
@@ -93,7 +94,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(310, 340, 170, 100);
 
-        background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background5.png"));
+        background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
         jPanel1.add(background5);
         background5.setBounds(0, 0, 800, 500);
 
