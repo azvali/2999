@@ -64,7 +64,7 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 127, 20);
+        reenter_label.setBounds(264, 239, 130, 20);
 
         username_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanel1.add(username_tfield);
@@ -94,6 +94,11 @@ public class CreateAccount extends javax.swing.JFrame {
         createaccount_button1.setBackground(new java.awt.Color(153, 153, 153));
         createaccount_button1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         createaccount_button1.setText("Create Account");
+        createaccount_button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createaccount_button1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(createaccount_button1);
         createaccount_button1.setBounds(410, 306, 178, 51);
 
@@ -117,7 +122,15 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void createaccount_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccount_buttonActionPerformed
         // TODO add your handling code here:
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_createaccount_buttonActionPerformed
+
+    private void createaccount_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccount_button1ActionPerformed
+        // creates a new account and store it in account database
+        // can use this to create success! box "JOptionPane.showMessageDialog(null,"Success!");"
+    }//GEN-LAST:event_createaccount_button1ActionPerformed
 
 	/**
 	 * @param args the command line arguments

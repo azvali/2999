@@ -31,6 +31,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         DeleteRecipe = new javax.swing.JButton();
         CreateNewRecipe = new javax.swing.JButton();
         AdminMenu = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         background5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,14 +46,14 @@ public class AdminControlPanel extends javax.swing.JFrame {
 
         BackToLogin.setBackground(new java.awt.Color(204, 204, 255));
         BackToLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        BackToLogin.setText("Back to Login");
+        BackToLogin.setText("Sign Out");
         BackToLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackToLoginActionPerformed(evt);
             }
         });
         jPanel1.add(BackToLogin);
-        BackToLogin.setBounds(293, 344, 220, 120);
+        BackToLogin.setBounds(10, 450, 150, 40);
 
         DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
         DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -81,6 +82,17 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jPanel1.add(AdminMenu);
         AdminMenu.setBounds(287, 35, 270, 90);
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton1.setText("All Recipes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(310, 340, 170, 100);
+
         background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background5.png"));
         jPanel1.add(background5);
         background5.setBounds(0, 0, 800, 500);
@@ -101,15 +113,31 @@ public class AdminControlPanel extends javax.swing.JFrame {
 
     private void CreateNewRecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewRecipeActionPerformed
         // TODO add your handling code here:
+        dispose();
+        CreateRecipe create = new CreateRecipe();
+        create.setVisible(true);
     }//GEN-LAST:event_CreateNewRecipeActionPerformed
 
     private void BackToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToLoginActionPerformed
         // TODO add your handling code here:
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_BackToLoginActionPerformed
 
     private void DeleteRecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeActionPerformed
         // TODO add your handling code here:
+        dispose();
+        DeleteRecipe delete = new DeleteRecipe();
+        delete.setVisible(true);
     }//GEN-LAST:event_DeleteRecipeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        AllRecipes all = new AllRecipes();
+        all.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +180,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
     private javax.swing.JButton CreateNewRecipe;
     private javax.swing.JButton DeleteRecipe;
     private javax.swing.JLabel background5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

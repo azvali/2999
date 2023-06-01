@@ -105,6 +105,9 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
 
     private void BookmarksReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookmarksReturnButtonActionPerformed
         // TODO add your handling code here:
+        dispose();
+        UserMain user = new UserMain();
+        user.setVisible(true);
     }//GEN-LAST:event_BookmarksReturnButtonActionPerformed
 
     private void BookmarksDropDownMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_BookmarksDropDownMouseWheelMoved

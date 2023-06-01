@@ -110,6 +110,9 @@ public class Lunch extends javax.swing.JFrame {
 
     private void lunchReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lunchReturnButtonActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AllRecipes a = new AllRecipes();
+        a.setVisible(true);
     }//GEN-LAST:event_lunchReturnButtonActionPerformed
 
     /**

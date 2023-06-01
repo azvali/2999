@@ -105,6 +105,9 @@ public class Breakfast extends javax.swing.JFrame {
 
     private void BreakfastReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreakfastReturnButtonActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AllRecipes a = new AllRecipes();
+        a.setVisible(true);
     }//GEN-LAST:event_BreakfastReturnButtonActionPerformed
 
     private void BreakfastDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_BreakfastDescriptionComponentHidden

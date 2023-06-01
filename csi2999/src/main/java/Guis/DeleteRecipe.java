@@ -46,7 +46,6 @@ public class DeleteRecipe extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 255));
@@ -54,12 +53,23 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jTextField1);
         jTextField1.setBounds(171, 110, 170, 30);
 
         CheckRecipeDeleteButton.setBackground(new java.awt.Color(255, 204, 204));
         CheckRecipeDeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         CheckRecipeDeleteButton.setText("Check Recipe");
+        CheckRecipeDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckRecipeDeleteButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(CheckRecipeDeleteButton);
         CheckRecipeDeleteButton.setBounds(401, 103, 140, 40);
 
@@ -71,6 +81,11 @@ public class DeleteRecipe extends javax.swing.JFrame {
         DeleteRecipeButton.setBackground(new java.awt.Color(255, 102, 102));
         DeleteRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         DeleteRecipeButton.setText("Delete");
+        DeleteRecipeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteRecipeButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(DeleteRecipeButton);
         DeleteRecipeButton.setBounds(574, 103, 140, 40);
 
@@ -140,7 +155,26 @@ public class DeleteRecipe extends javax.swing.JFrame {
 
     private void DeleteRecipeReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeReturnButtonActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AdminControlPanel admin = new AdminControlPanel();
+        admin.setVisible(true);
     }//GEN-LAST:event_DeleteRecipeReturnButtonActionPerformed
+
+    private void CheckRecipeDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecipeDeleteButtonActionPerformed
+        // displays selected recipe in text areas 
+        
+        
+    }//GEN-LAST:event_CheckRecipeDeleteButtonActionPerformed
+
+    private void DeleteRecipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeButtonActionPerformed
+        // removes the recipe from the database
+        
+        
+    }//GEN-LAST:event_DeleteRecipeButtonActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -9,13 +9,14 @@ package Guis;
  * @author masta
  */
 public class UserMain extends javax.swing.JFrame {
-
+       
 	/**
 	 * Creates new form UserMain
 	 */
-	public UserMain() {
-		initComponents();
-	}
+        public UserMain(){
+            initComponents();
+        }
+	
 
 	/**
 	 * This method is called from within the constructor to initialize the
@@ -64,12 +65,22 @@ public class UserMain extends javax.swing.JFrame {
         allrecipes_label.setBackground(new java.awt.Color(255, 255, 102));
         allrecipes_label.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         allrecipes_label.setText("All Recipes");
+        allrecipes_label.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allrecipes_labelActionPerformed(evt);
+            }
+        });
         jPanel1.add(allrecipes_label);
         allrecipes_label.setBounds(185, 171, 174, 76);
 
         singout_button.setBackground(new java.awt.Color(153, 153, 153));
         singout_button.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         singout_button.setText("Sign Out");
+        singout_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                singout_buttonActionPerformed(evt);
+            }
+        });
         jPanel1.add(singout_button);
         singout_button.setBounds(355, 286, 89, 38);
 
@@ -109,7 +120,25 @@ public class UserMain extends javax.swing.JFrame {
 
     private void bookmarks_labelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookmarks_labelActionPerformed
         // TODO add your handling code here:
+        dispose();
+        BookmarkedRecipes bookmark = new BookmarkedRecipes();
+        bookmark.setVisible(true);
+        
     }//GEN-LAST:event_bookmarks_labelActionPerformed
+
+    private void allrecipes_labelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allrecipes_labelActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        AllRecipes all = new AllRecipes();
+        all.setVisible(true);
+    }//GEN-LAST:event_allrecipes_labelActionPerformed
+
+    private void singout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singout_buttonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_singout_buttonActionPerformed
 
 	/**
 	 * @param args the command line arguments

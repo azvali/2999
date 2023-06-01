@@ -75,12 +75,22 @@ public class CreateRecipe extends javax.swing.JFrame {
         ExitButton.setBackground(new java.awt.Color(255, 51, 51));
         ExitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ExitButton.setText("Return");
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(ExitButton);
         ExitButton.setBounds(390, 460, 90, 30);
 
         SubmitButton.setBackground(new java.awt.Color(153, 255, 153));
         SubmitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SubmitButton.setText("Submit");
+        SubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(SubmitButton);
         SubmitButton.setBounds(260, 460, 90, 30);
 
@@ -161,6 +171,19 @@ public class CreateRecipe extends javax.swing.JFrame {
     private void DescriptionTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionTextBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescriptionTextBoxActionPerformed
+
+    private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
+        // saves created recipe to recipe database
+        
+        
+    }//GEN-LAST:event_SubmitButtonActionPerformed
+
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        AdminControlPanel admin = new AdminControlPanel();
+        admin.setVisible(true);
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
      * @param args the command line arguments

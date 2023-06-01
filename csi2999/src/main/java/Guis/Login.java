@@ -11,7 +11,10 @@ import javax.swing.JOptionPane;
  * @author azval
  */
 public class Login extends javax.swing.JFrame {
-
+    
+    public static String GlobalUser;
+    public static String GlobalPass;
+    
     /**
      * Creates new form Login
      */
@@ -145,6 +148,8 @@ public class Login extends javax.swing.JFrame {
         // TEMPORARY Login Button Functionality
         String user = UsernameTextBox.getText();
         String password = PasswordTextBox.getText();
+        GlobalUser = user;
+        GlobalPass = password;
 
         if(user.equals("admin") && password.equals("1234")){
                 dispose();

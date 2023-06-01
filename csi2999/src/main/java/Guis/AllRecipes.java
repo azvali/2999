@@ -4,12 +4,14 @@
  */
 package Guis;
 
+
 /**
  *
  * @author ethan
  */
 public class AllRecipes extends javax.swing.JFrame {
-
+    //private String GlobalUser;
+    //private String GlobalPass;
     /**
      * Creates new form AllRecipes
      */
@@ -67,18 +69,33 @@ public class AllRecipes extends javax.swing.JFrame {
         appetizersButton2.setBackground(new java.awt.Color(255, 153, 102));
         appetizersButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         appetizersButton2.setText("Breakfast");
+        appetizersButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appetizersButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(appetizersButton2);
         appetizersButton2.setBounds(150, 110, 200, 110);
 
         appetizersButton1.setBackground(new java.awt.Color(204, 153, 0));
         appetizersButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         appetizersButton1.setText("Dinner");
+        appetizersButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appetizersButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(appetizersButton1);
         appetizersButton1.setBounds(300, 260, 200, 110);
 
         appetizersButton.setBackground(new java.awt.Color(255, 153, 51));
         appetizersButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         appetizersButton.setText("Lunch");
+        appetizersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appetizersButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(appetizersButton);
         appetizersButton.setBounds(440, 110, 200, 110);
 
@@ -104,7 +121,40 @@ public class AllRecipes extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         // TODO add your handling code here:
+        if(Login.GlobalUser.equals("admin") && Login.GlobalPass.equals("1234")){
+                dispose();
+                AdminControlPanel AdminPage = new AdminControlPanel();
+                AdminPage.setVisible(true);
+
+            }
+            else if(Login.GlobalUser.equals("user") && Login.GlobalPass.equals("1234")){
+                dispose();
+                UserMain UserPage = new UserMain();
+                UserPage.setVisible(true);
+
+            }
     }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void appetizersButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appetizersButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Breakfast b = new Breakfast();
+        b.setVisible(true);
+    }//GEN-LAST:event_appetizersButton2ActionPerformed
+
+    private void appetizersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appetizersButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Lunch l = new Lunch();
+        l.setVisible(true);
+    }//GEN-LAST:event_appetizersButtonActionPerformed
+
+    private void appetizersButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appetizersButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Dinner d = new Dinner();
+        d.setVisible(true);
+    }//GEN-LAST:event_appetizersButton1ActionPerformed
 
     /**
      * @param args the command line arguments
