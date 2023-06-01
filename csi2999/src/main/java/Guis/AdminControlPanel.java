@@ -30,13 +30,15 @@ public class AdminControlPanel extends javax.swing.JFrame {
         CreateNewRecipe = new javax.swing.JButton();
         DeleteRecipe = new javax.swing.JButton();
         BackToLogin = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AdminMenu.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         AdminMenu.setText("Admin Menu");
+        getContentPane().add(AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 6, 270, 90));
 
         CreateNewRecipe.setBackground(new java.awt.Color(153, 255, 153));
         CreateNewRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -46,6 +48,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 CreateNewRecipeActionPerformed(evt);
             }
         });
+        getContentPane().add(CreateNewRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 120, 300, 160));
 
         DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
         DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -55,6 +58,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 DeleteRecipeActionPerformed(evt);
             }
         });
+        getContentPane().add(DeleteRecipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 120, 300, 160));
 
         BackToLogin.setBackground(new java.awt.Color(204, 204, 255));
         BackToLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -64,40 +68,22 @@ public class AdminControlPanel extends javax.swing.JFrame {
                 BackToLoginActionPerformed(evt);
             }
         });
+        getContentPane().add(BackToLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 315, 220, 120));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(CreateNewRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(DeleteRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BackToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(283, 283, 283))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(AdminMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(239, 239, 239))))
+        jPanel1.setBackground(new java.awt.Color(102, 255, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(AdminMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CreateNewRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteRecipe, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(BackToLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,5 +140,6 @@ public class AdminControlPanel extends javax.swing.JFrame {
     private javax.swing.JButton BackToLogin;
     private javax.swing.JButton CreateNewRecipe;
     private javax.swing.JButton DeleteRecipe;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
