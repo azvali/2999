@@ -64,6 +64,11 @@ public class Login extends javax.swing.JFrame {
         CreateANewAccount.setBackground(new java.awt.Color(255, 255, 153));
         CreateANewAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         CreateANewAccount.setText("Create a New Account");
+        CreateANewAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateANewAccountActionPerformed(evt);
+            }
+        });
 
         EnterButton.setBackground(new java.awt.Color(0, 204, 0));
         EnterButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -138,6 +143,11 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CreateANewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateANewAccountActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_CreateANewAccountActionPerformed
 
     /**
      * @param args the command line arguments
