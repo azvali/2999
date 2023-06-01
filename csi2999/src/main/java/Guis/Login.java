@@ -39,6 +39,8 @@ public class Login extends javax.swing.JFrame {
         EnterButton = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
         EnterPasswordBox = new javax.swing.JPasswordField();
+        welcome = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 500));
@@ -50,16 +52,25 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1.setLayout(null);
 
         EnterPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         EnterPassword.setText("Enter Password:");
+        jPanel1.add(EnterPassword);
+        EnterPassword.setBounds(277, 204, 110, 20);
+        jPanel1.add(jPasswordField1);
+        jPasswordField1.setBounds(408, 204, 119, 22);
 
         LoginIntro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LoginIntro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LoginIntro.setText("Login to Culinary Creations!");
+        LoginIntro.setText("LOGIN");
+        jPanel1.add(LoginIntro);
+        LoginIntro.setBounds(270, 80, 240, 40);
 
         EnterUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         EnterUsername.setText("Enter Username:");
+        jPanel1.add(EnterUsername);
+        EnterUsername.setBounds(277, 169, 101, 20);
 
         CreateANewAccount.setBackground(new java.awt.Color(255, 255, 153));
         CreateANewAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -69,76 +80,44 @@ public class Login extends javax.swing.JFrame {
                 CreateANewAccountActionPerformed(evt);
             }
         });
+        jPanel1.add(CreateANewAccount);
+        CreateANewAccount.setBounds(277, 265, 220, 32);
 
         EnterButton.setBackground(new java.awt.Color(0, 204, 0));
         EnterButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         EnterButton.setText("Enter");
+        jPanel1.add(EnterButton);
+        EnterButton.setBounds(155, 265, 72, 32);
 
         Exit.setBackground(new java.awt.Color(255, 51, 51));
         Exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Exit.setText("Exit");
+        jPanel1.add(Exit);
+        Exit.setBounds(534, 265, 80, 30);
+        jPanel1.add(EnterPasswordBox);
+        EnterPasswordBox.setBounds(408, 169, 119, 22);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(EnterPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(EnterButton)
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(CreateANewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LoginIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(EnterUsername)
-                                .addGap(30, 30, 30)
-                                .addComponent(EnterPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(LoginIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EnterUsername)
-                    .addComponent(EnterPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EnterPassword)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EnterButton)
-                    .addComponent(CreateANewAccount)
-                    .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(203, Short.MAX_VALUE))
-        );
+        welcome.setBackground(new java.awt.Color(102, 51, 255));
+        welcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        welcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcome.setText("WELCOME TO CULINARY CREATIONS!");
+        jPanel1.add(welcome);
+        welcome.setBounds(150, 0, 520, 90);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Guis/background.png"))); // NOI18N
+        background.setText("jLabel1");
+        jPanel1.add(background);
+        background.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -192,11 +171,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel EnterUsername;
     private javax.swing.JButton Exit;
     private javax.swing.JLabel LoginIntro;
+    private javax.swing.JLabel background;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

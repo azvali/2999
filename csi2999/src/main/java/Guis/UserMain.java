@@ -31,6 +31,7 @@ public class UserMain extends javax.swing.JFrame {
         allrecipes_label = new javax.swing.JButton();
         singout_button = new javax.swing.JButton();
         bookmarks_label = new javax.swing.JButton();
+        background3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 255));
@@ -51,19 +52,26 @@ public class UserMain extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1.setLayout(null);
 
         mainmenu_label.setBackground(new java.awt.Color(255, 255, 0));
         mainmenu_label.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         mainmenu_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mainmenu_label.setText("Main Menu");
+        jPanel1.add(mainmenu_label);
+        mainmenu_label.setBounds(331, 96, 142, 38);
 
         allrecipes_label.setBackground(new java.awt.Color(255, 255, 102));
         allrecipes_label.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         allrecipes_label.setText("All Recipes");
+        jPanel1.add(allrecipes_label);
+        allrecipes_label.setBounds(185, 171, 174, 76);
 
         singout_button.setBackground(new java.awt.Color(153, 153, 153));
         singout_button.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         singout_button.setText("Sign Out");
+        jPanel1.add(singout_button);
+        singout_button.setBounds(355, 286, 89, 38);
 
         bookmarks_label.setBackground(new java.awt.Color(255, 255, 102));
         bookmarks_label.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -73,39 +81,13 @@ public class UserMain extends javax.swing.JFrame {
                 bookmarks_labelActionPerformed(evt);
             }
         });
+        jPanel1.add(bookmarks_label);
+        bookmarks_label.setBounds(440, 171, 174, 76);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(331, 331, 331)
-                        .addComponent(mainmenu_label))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(allrecipes_label, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81)
-                        .addComponent(bookmarks_label, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(355, 355, 355)
-                        .addComponent(singout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(mainmenu_label)
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allrecipes_label, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bookmarks_label, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(singout_button, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addGap(176, 176, 176))
-        );
+        background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Guis/background3.png"))); // NOI18N
+        background3.setText("jLabel1");
+        jPanel1.add(background3);
+        background3.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,6 +148,7 @@ public class UserMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton allrecipes_label;
+    private javax.swing.JLabel background3;
     private javax.swing.JButton bookmarks_label;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mainmenu_label;
