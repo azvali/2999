@@ -39,7 +39,6 @@ public class UserMain extends javax.swing.JFrame {
         setFocusable(false);
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 500));
         addPropertyChangeListener(new java.beans.PropertyChangeListener() {
