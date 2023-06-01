@@ -28,10 +28,10 @@ public class AllRecipes extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         allRecipesLabel = new javax.swing.JLabel();
-        AllRecipesReturnButton = new javax.swing.JButton();
-        BreakfastButton = new javax.swing.JButton();
-        DinnerButton = new javax.swing.JButton();
-        LunchButton = new javax.swing.JButton();
+        homeButton = new javax.swing.JButton();
+        appetizersButton2 = new javax.swing.JButton();
+        appetizersButton1 = new javax.swing.JButton();
+        appetizersButton = new javax.swing.JButton();
         background4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,37 +50,37 @@ public class AllRecipes extends javax.swing.JFrame {
         allRecipesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         allRecipesLabel.setText("All Recipes");
         jPanel1.add(allRecipesLabel);
-        allRecipesLabel.setBounds(310, 10, 180, 60);
+        allRecipesLabel.setBounds(300, 10, 180, 60);
 
-        AllRecipesReturnButton.setBackground(new java.awt.Color(153, 51, 0));
-        AllRecipesReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        AllRecipesReturnButton.setText("Return");
-        AllRecipesReturnButton.setName("AllRecipesReturnButton"); // NOI18N
-        AllRecipesReturnButton.addActionListener(new java.awt.event.ActionListener() {
+        homeButton.setBackground(new java.awt.Color(153, 51, 0));
+        homeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        homeButton.setLabel("Home");
+        homeButton.setName("homeButton"); // NOI18N
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AllRecipesReturnButtonActionPerformed(evt);
+                homeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(AllRecipesReturnButton);
-        AllRecipesReturnButton.setBounds(40, 400, 110, 40);
+        jPanel1.add(homeButton);
+        homeButton.setBounds(110, 20, 110, 40);
 
-        BreakfastButton.setBackground(new java.awt.Color(255, 153, 102));
-        BreakfastButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BreakfastButton.setText("Breakfast");
-        jPanel1.add(BreakfastButton);
-        BreakfastButton.setBounds(150, 110, 200, 110);
+        appetizersButton2.setBackground(new java.awt.Color(255, 153, 102));
+        appetizersButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appetizersButton2.setText("Breakfast");
+        jPanel1.add(appetizersButton2);
+        appetizersButton2.setBounds(150, 110, 200, 110);
 
-        DinnerButton.setBackground(new java.awt.Color(204, 153, 0));
-        DinnerButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        DinnerButton.setText("Dinner");
-        jPanel1.add(DinnerButton);
-        DinnerButton.setBounds(300, 260, 200, 110);
+        appetizersButton1.setBackground(new java.awt.Color(204, 153, 0));
+        appetizersButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appetizersButton1.setText("Dinner");
+        jPanel1.add(appetizersButton1);
+        appetizersButton1.setBounds(300, 260, 200, 110);
 
-        LunchButton.setBackground(new java.awt.Color(255, 153, 51));
-        LunchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        LunchButton.setText("Lunch");
-        jPanel1.add(LunchButton);
-        LunchButton.setBounds(440, 110, 200, 110);
+        appetizersButton.setBackground(new java.awt.Color(255, 153, 51));
+        appetizersButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        appetizersButton.setText("Lunch");
+        jPanel1.add(appetizersButton);
+        appetizersButton.setBounds(440, 110, 200, 110);
 
         background4.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
         jPanel1.add(background4);
@@ -102,9 +102,9 @@ public class AllRecipes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AllRecipesReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllRecipesReturnButtonActionPerformed
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AllRecipesReturnButtonActionPerformed
+    }//GEN-LAST:event_homeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,12 +142,12 @@ public class AllRecipes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AllRecipesReturnButton;
-    private javax.swing.JButton BreakfastButton;
-    private javax.swing.JButton DinnerButton;
-    private javax.swing.JButton LunchButton;
     private javax.swing.JLabel allRecipesLabel;
+    private javax.swing.JButton appetizersButton;
+    private javax.swing.JButton appetizersButton1;
+    private javax.swing.JButton appetizersButton2;
     private javax.swing.JLabel background4;
+    private javax.swing.JButton homeButton;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

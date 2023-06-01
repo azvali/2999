@@ -28,16 +28,11 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        CookTimesTextBox = new javax.swing.JTextArea();
+        jTextArea1 = new javax.swing.JTextArea();
         BookmarksDropDown = new javax.swing.JComboBox<>();
         BookmarksReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        DescriptionTextBox = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        HowToTextBox = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        IngredientsTextBox = new javax.swing.JTextArea();
+        background8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 204));
@@ -51,12 +46,12 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
 
-        CookTimesTextBox.setColumns(20);
-        CookTimesTextBox.setRows(5);
-        jScrollPane1.setViewportView(CookTimesTextBox);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(40, 320, 350, 150);
+        jScrollPane1.setBounds(56, 193, 693, 279);
 
         BookmarksDropDown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BookmarksDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -71,7 +66,7 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BookmarksDropDown);
-        BookmarksDropDown.setBounds(210, 110, 197, 26);
+        BookmarksDropDown.setBounds(212, 154, 197, 26);
 
         BookmarksReturnButton.setBackground(new java.awt.Color(204, 204, 204));
         BookmarksReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -82,33 +77,17 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BookmarksReturnButton);
-        BookmarksReturnButton.setBounds(440, 110, 96, 27);
+        BookmarksReturnButton.setBounds(443, 154, 96, 27);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Bookmarks");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(288, 33, 200, 48);
 
-        DescriptionTextBox.setColumns(20);
-        DescriptionTextBox.setRows(5);
-        jScrollPane2.setViewportView(DescriptionTextBox);
-
-        jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(40, 150, 350, 150);
-
-        HowToTextBox.setColumns(20);
-        HowToTextBox.setRows(5);
-        jScrollPane3.setViewportView(HowToTextBox);
-
-        jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(430, 150, 350, 150);
-
-        IngredientsTextBox.setColumns(20);
-        IngredientsTextBox.setRows(5);
-        jScrollPane4.setViewportView(IngredientsTextBox);
-
-        jPanel2.add(jScrollPane4);
-        jScrollPane4.setBounds(430, 320, 350, 150);
+        background8.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background8.png"));
+        background8.setOpaque(true);
+        jPanel2.add(background8);
+        background8.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,15 +153,10 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BookmarksDropDown;
     private javax.swing.JButton BookmarksReturnButton;
-    private javax.swing.JTextArea CookTimesTextBox;
-    private javax.swing.JTextArea DescriptionTextBox;
-    private javax.swing.JTextArea HowToTextBox;
-    private javax.swing.JTextArea IngredientsTextBox;
+    private javax.swing.JLabel background8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

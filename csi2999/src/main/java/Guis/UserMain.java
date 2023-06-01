@@ -28,9 +28,9 @@ public class UserMain extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         mainmenu_label = new javax.swing.JLabel();
-        MainMenuAllRecipesButton = new javax.swing.JButton();
-        MainMenuSignOutButton = new javax.swing.JButton();
-        MainMenuBookmarksButton = new javax.swing.JButton();
+        allrecipes_label = new javax.swing.JButton();
+        singout_button = new javax.swing.JButton();
+        bookmarks_label = new javax.swing.JButton();
         background3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,30 +61,31 @@ public class UserMain extends javax.swing.JFrame {
         jPanel1.add(mainmenu_label);
         mainmenu_label.setBounds(331, 96, 142, 38);
 
-        MainMenuAllRecipesButton.setBackground(new java.awt.Color(255, 255, 102));
-        MainMenuAllRecipesButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        MainMenuAllRecipesButton.setText("All Recipes");
-        jPanel1.add(MainMenuAllRecipesButton);
-        MainMenuAllRecipesButton.setBounds(185, 171, 174, 76);
+        allrecipes_label.setBackground(new java.awt.Color(255, 255, 102));
+        allrecipes_label.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        allrecipes_label.setText("All Recipes");
+        jPanel1.add(allrecipes_label);
+        allrecipes_label.setBounds(185, 171, 174, 76);
 
-        MainMenuSignOutButton.setBackground(new java.awt.Color(153, 153, 153));
-        MainMenuSignOutButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        MainMenuSignOutButton.setText("Sign Out");
-        jPanel1.add(MainMenuSignOutButton);
-        MainMenuSignOutButton.setBounds(355, 286, 89, 38);
+        singout_button.setBackground(new java.awt.Color(153, 153, 153));
+        singout_button.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        singout_button.setText("Sign Out");
+        jPanel1.add(singout_button);
+        singout_button.setBounds(355, 286, 89, 38);
 
-        MainMenuBookmarksButton.setBackground(new java.awt.Color(255, 255, 102));
-        MainMenuBookmarksButton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        MainMenuBookmarksButton.setText("Bookmarks");
-        MainMenuBookmarksButton.addActionListener(new java.awt.event.ActionListener() {
+        bookmarks_label.setBackground(new java.awt.Color(255, 255, 102));
+        bookmarks_label.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        bookmarks_label.setText("Bookmarks");
+        bookmarks_label.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MainMenuBookmarksButtonActionPerformed(evt);
+                bookmarks_labelActionPerformed(evt);
             }
         });
-        jPanel1.add(MainMenuBookmarksButton);
-        MainMenuBookmarksButton.setBounds(440, 171, 174, 76);
+        jPanel1.add(bookmarks_label);
+        bookmarks_label.setBounds(440, 171, 174, 76);
 
         background3.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
+        background3.setOpaque(true);
         jPanel1.add(background3);
         background3.setBounds(0, 0, 800, 500);
 
@@ -106,9 +107,9 @@ public class UserMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formPropertyChange
 
-    private void MainMenuBookmarksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuBookmarksButtonActionPerformed
+    private void bookmarks_labelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookmarks_labelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MainMenuBookmarksButtonActionPerformed
+    }//GEN-LAST:event_bookmarks_labelActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -146,11 +147,11 @@ public class UserMain extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MainMenuAllRecipesButton;
-    private javax.swing.JButton MainMenuBookmarksButton;
-    private javax.swing.JButton MainMenuSignOutButton;
+    private javax.swing.JButton allrecipes_label;
     private javax.swing.JLabel background3;
+    private javax.swing.JButton bookmarks_label;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mainmenu_label;
+    private javax.swing.JButton singout_button;
     // End of variables declaration//GEN-END:variables
 }

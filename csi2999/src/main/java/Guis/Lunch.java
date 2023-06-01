@@ -82,9 +82,9 @@ public class Lunch extends javax.swing.JFrame {
         lunch.setBackground(new java.awt.Color(0, 0, 0));
         lunch.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         lunch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lunch.setText("Lunch");
+        lunch.setText("Lunch Recipes");
         jPanel2.add(lunch);
-        lunch.setBounds(260, 0, 280, 70);
+        lunch.setBounds(250, 0, 280, 70);
 
         lunchimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\Lunch Image.png"));
         jPanel2.add(lunchimage);

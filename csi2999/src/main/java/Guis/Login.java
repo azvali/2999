@@ -37,9 +37,9 @@ public class Login extends javax.swing.JFrame {
         PasswordTextBox = new javax.swing.JPasswordField();
         LoginIntro = new javax.swing.JLabel();
         EnterUsername = new javax.swing.JLabel();
-        CreateAccountButton = new javax.swing.JButton();
+        CreateANewAccount = new javax.swing.JButton();
         EnterButton = new javax.swing.JButton();
-        ExitButton = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         welcome = new javax.swing.JLabel();
         UsernameTextBox = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
@@ -74,16 +74,16 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(EnterUsername);
         EnterUsername.setBounds(277, 169, 101, 20);
 
-        CreateAccountButton.setBackground(new java.awt.Color(255, 255, 153));
-        CreateAccountButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        CreateAccountButton.setText("Create a New Account");
-        CreateAccountButton.addActionListener(new java.awt.event.ActionListener() {
+        CreateANewAccount.setBackground(new java.awt.Color(255, 255, 153));
+        CreateANewAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CreateANewAccount.setText("Create a New Account");
+        CreateANewAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateAccountButtonActionPerformed(evt);
+                CreateANewAccountActionPerformed(evt);
             }
         });
-        jPanel1.add(CreateAccountButton);
-        CreateAccountButton.setBounds(277, 265, 220, 32);
+        jPanel1.add(CreateANewAccount);
+        CreateANewAccount.setBounds(277, 265, 220, 32);
 
         EnterButton.setBackground(new java.awt.Color(0, 204, 0));
         EnterButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -94,18 +94,18 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(EnterButton);
-        EnterButton.setBounds(155, 265, 72, 32);
+        EnterButton.setBounds(155, 265, 80, 32);
 
-        ExitButton.setBackground(new java.awt.Color(255, 51, 51));
-        ExitButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ExitButton.setText("Exit");
-        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setBackground(new java.awt.Color(255, 51, 51));
+        Exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitButtonActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
-        jPanel1.add(ExitButton);
-        ExitButton.setBounds(534, 265, 80, 30);
+        jPanel1.add(Exit);
+        Exit.setBounds(534, 265, 80, 30);
 
         welcome.setBackground(new java.awt.Color(102, 51, 255));
         welcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -134,39 +134,39 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
+    private void CreateANewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateANewAccountActionPerformed
         // TODO add your handling code here:
         dispose();
         CreateAccount create = new CreateAccount();
         create.setVisible(true);
-    }//GEN-LAST:event_CreateAccountButtonActionPerformed
+    }//GEN-LAST:event_CreateANewAccountActionPerformed
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TEMPORARY Login Button Functionality
         String user = UsernameTextBox.getText();
         String password = PasswordTextBox.getText();
-        
+
         if(user.equals("admin") && password.equals("1234")){
                 dispose();
                 AdminControlPanel AdminPage = new AdminControlPanel();
                 AdminPage.setVisible(true);
-                
+
             }
             else if(user.equals("user") && password.equals("1234")){
                 dispose();
                 UserMain UserPage = new UserMain();
                 UserPage.setVisible(true);
-                
+
             }
             else{
                 JOptionPane.showMessageDialog(null,"Incorrect username/password");
             }
     }//GEN-LAST:event_EnterButtonActionPerformed
 
-    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_ExitButtonActionPerformed
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +204,11 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CreateAccountButton;
+    private javax.swing.JButton CreateANewAccount;
     private javax.swing.JButton EnterButton;
     private javax.swing.JLabel EnterPassword;
     private javax.swing.JLabel EnterUsername;
-    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton Exit;
     private javax.swing.JLabel LoginIntro;
     private javax.swing.JPasswordField PasswordTextBox;
     private javax.swing.JTextField UsernameTextBox;
