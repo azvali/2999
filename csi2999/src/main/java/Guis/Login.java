@@ -40,8 +40,8 @@ public class Login extends javax.swing.JFrame {
         CreateAccountButton = new javax.swing.JButton();
         EnterButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
-        UsernameTextBox = new javax.swing.JPasswordField();
         welcome = new javax.swing.JLabel();
+        UsernameTextBox = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,16 +99,13 @@ public class Login extends javax.swing.JFrame {
         ExitButton.setBackground(new java.awt.Color(255, 51, 51));
         ExitButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ExitButton.setText("Exit");
-        jPanel1.add(ExitButton);
-        ExitButton.setBounds(534, 265, 80, 30);
-
-        UsernameTextBox.addActionListener(new java.awt.event.ActionListener() {
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameTextBoxActionPerformed(evt);
+                ExitButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(UsernameTextBox);
-        UsernameTextBox.setBounds(408, 169, 119, 22);
+        jPanel1.add(ExitButton);
+        ExitButton.setBounds(534, 265, 80, 30);
 
         welcome.setBackground(new java.awt.Color(102, 51, 255));
         welcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -116,6 +113,8 @@ public class Login extends javax.swing.JFrame {
         welcome.setText("WELCOME TO CULINARY CREATIONS!");
         jPanel1.add(welcome);
         welcome.setBounds(150, 0, 520, 90);
+        jPanel1.add(UsernameTextBox);
+        UsernameTextBox.setBounds(410, 170, 120, 22);
 
         background.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background.png"));
         jPanel1.add(background);
@@ -137,7 +136,9 @@ public class Login extends javax.swing.JFrame {
 
     private void CreateAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountButtonActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        CreateAccount create = new CreateAccount();
+        create.setVisible(true);
     }//GEN-LAST:event_CreateAccountButtonActionPerformed
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
@@ -151,7 +152,7 @@ public class Login extends javax.swing.JFrame {
                 AdminPage.setVisible(true);
                 
             }
-            else if(user.equals("customer") && password.equals("1234")){
+            else if(user.equals("user") && password.equals("1234")){
                 dispose();
                 UserMain UserPage = new UserMain();
                 UserPage.setVisible(true);
@@ -162,9 +163,10 @@ public class Login extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_EnterButtonActionPerformed
 
-    private void UsernameTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextBoxActionPerformed
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameTextBoxActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +211,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton ExitButton;
     private javax.swing.JLabel LoginIntro;
     private javax.swing.JPasswordField PasswordTextBox;
-    private javax.swing.JPasswordField UsernameTextBox;
+    private javax.swing.JTextField UsernameTextBox;
     private javax.swing.JLabel background;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
