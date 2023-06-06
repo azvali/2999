@@ -51,7 +51,7 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(56, 193, 693, 279);
+        jScrollPane1.setBounds(20, 190, 760, 290);
 
         BookmarksDropDown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BookmarksDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

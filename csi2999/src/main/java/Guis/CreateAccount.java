@@ -4,6 +4,8 @@
  */
 package Guis;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author masta
@@ -27,15 +29,15 @@ public class CreateAccount extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        reenter_field = new javax.swing.JPasswordField();
-        password_tfield = new javax.swing.JPasswordField();
+        CreateAccountReEnterPassword = new javax.swing.JPasswordField();
+        CreateAccountPassword = new javax.swing.JPasswordField();
         createaccount_label = new javax.swing.JLabel();
         reenter_label = new javax.swing.JLabel();
-        username_tfield = new javax.swing.JTextField();
-        createaccount_button = new javax.swing.JButton();
+        CreateAccountUsername = new javax.swing.JTextField();
+        CreateAccountReturnButton = new javax.swing.JButton();
         password_label = new javax.swing.JLabel();
         username_label = new javax.swing.JLabel();
-        createaccount_button1 = new javax.swing.JButton();
+        CreateAccountCreateButton = new javax.swing.JButton();
         background2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,13 +49,13 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        reenter_field.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(reenter_field);
-        reenter_field.setBounds(428, 241, 150, 21);
+        CreateAccountReEnterPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(CreateAccountReEnterPassword);
+        CreateAccountReEnterPassword.setBounds(428, 241, 150, 21);
 
-        password_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(password_tfield);
-        password_tfield.setBounds(428, 205, 150, 23);
+        CreateAccountPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel1.add(CreateAccountPassword);
+        CreateAccountPassword.setBounds(428, 205, 150, 23);
 
         createaccount_label.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         createaccount_label.setForeground(new java.awt.Color(255, 153, 153));
@@ -65,22 +67,27 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 127, 20);
+        reenter_label.setBounds(264, 239, 130, 20);
 
-        username_tfield.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel1.add(username_tfield);
-        username_tfield.setBounds(428, 172, 150, 21);
-
-        createaccount_button.setBackground(new java.awt.Color(153, 153, 153));
-        createaccount_button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        createaccount_button.setText("Return");
-        createaccount_button.addActionListener(new java.awt.event.ActionListener() {
+        CreateAccountUsername.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        CreateAccountUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createaccount_buttonActionPerformed(evt);
+                CreateAccountUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(createaccount_button);
-        createaccount_button.setBounds(213, 305, 178, 51);
+        jPanel1.add(CreateAccountUsername);
+        CreateAccountUsername.setBounds(428, 172, 150, 21);
+
+        CreateAccountReturnButton.setBackground(new java.awt.Color(153, 153, 153));
+        CreateAccountReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CreateAccountReturnButton.setText("Return");
+        CreateAccountReturnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateAccountReturnButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CreateAccountReturnButton);
+        CreateAccountReturnButton.setBounds(213, 305, 178, 51);
 
         password_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         password_label.setText("Password:");
@@ -92,16 +99,16 @@ public class CreateAccount extends javax.swing.JFrame {
         jPanel1.add(username_label);
         username_label.setBounds(264, 170, 100, 20);
 
-        createaccount_button1.setBackground(new java.awt.Color(153, 153, 153));
-        createaccount_button1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        createaccount_button1.setText("Create Account");
-        createaccount_button1.addActionListener(new java.awt.event.ActionListener() {
+        CreateAccountCreateButton.setBackground(new java.awt.Color(153, 153, 153));
+        CreateAccountCreateButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CreateAccountCreateButton.setText("Create Account");
+        CreateAccountCreateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createaccount_button1ActionPerformed(evt);
+                CreateAccountCreateButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(createaccount_button1);
-        createaccount_button1.setBounds(410, 306, 178, 51);
+        jPanel1.add(CreateAccountCreateButton);
+        CreateAccountCreateButton.setBounds(410, 306, 178, 51);
 
         background2.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel1.add(background2);
@@ -121,17 +128,72 @@ public class CreateAccount extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createaccount_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccount_buttonActionPerformed
+    private void CreateAccountReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountReturnButtonActionPerformed
         // TODO add your handling code here:
         dispose();
         Login login = new Login();
         login.setVisible(true);
-    }//GEN-LAST:event_createaccount_buttonActionPerformed
+    }//GEN-LAST:event_CreateAccountReturnButtonActionPerformed
 
-    private void createaccount_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaccount_button1ActionPerformed
+    private void CreateAccountCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountCreateButtonActionPerformed
         // creates a new account and store it in account database
+        String user = CreateAccountUsername.getText();
+        String pass = CreateAccountPassword.getText();
+        String repass = CreateAccountReEnterPassword.getText();
+        //assigns the username, password, and reentered password to their own variables
+        
+        //database connection details
+        String host = "jdbc:mysql://localhost:3306/csi2999?zeroDateTimeBehavior=CONVERT_TO_NULL [root on Default schema]";
+        int port = 3306;
+        String DatabaseUsername = "root";
+        String DatabasePassword = "";
+        String Database = "csi2999";
+        
+        //verify if passwords match with this if structure 
+        if(!pass.equals(repass)) {
+            JOptionPane.showMessageDialog(null,"Passwords do not match.");
+            return;
+        }
+        try{
+            //establish connection with the database
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+         
+            //check if username exists
+            String checkQuery = "SELECT username FROM logins WHERE username = ?";
+            PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+            checkStmt.setString(1, user);
+
+            ResultSet resultSet = checkStmt.executeQuery();
+            
+            // If the username already exists, notify the user
+            if (resultSet.next()) {
+                System.out.println("Username already exists!");
+            }
+            else{
+                // Insert the new account into the database
+                String insertQuery = "INSERT INTO logins (username, password) VALUES (?, ?)";
+                PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+                insertStmt.setString(1, user);
+                insertStmt.setString(2, pass);
+                insertStmt.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Account created successfully!");
+                
+                //close resources
+                resultSet.close();
+                checkStmt.close();
+                conn.close();
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
         // can use this to create success! box "JOptionPane.showMessageDialog(null,"Success!");"
-    }//GEN-LAST:event_createaccount_button1ActionPerformed
+    }//GEN-LAST:event_CreateAccountCreateButtonActionPerformed
+
+    private void CreateAccountUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateAccountUsernameActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -169,16 +231,16 @@ public class CreateAccount extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CreateAccountCreateButton;
+    private javax.swing.JPasswordField CreateAccountPassword;
+    private javax.swing.JPasswordField CreateAccountReEnterPassword;
+    private javax.swing.JButton CreateAccountReturnButton;
+    private javax.swing.JTextField CreateAccountUsername;
     private javax.swing.JLabel background2;
-    private javax.swing.JButton createaccount_button;
-    private javax.swing.JButton createaccount_button1;
     private javax.swing.JLabel createaccount_label;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel password_label;
-    private javax.swing.JPasswordField password_tfield;
-    private javax.swing.JPasswordField reenter_field;
     private javax.swing.JLabel reenter_label;
     private javax.swing.JLabel username_label;
-    private javax.swing.JTextField username_tfield;
     // End of variables declaration//GEN-END:variables
 }
