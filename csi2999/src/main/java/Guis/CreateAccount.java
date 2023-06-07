@@ -5,6 +5,8 @@
 package Guis;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -67,7 +69,7 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 130, 20);
+        reenter_label.setBounds(264, 239, 127, 20);
 
         CreateAccountUsername.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         CreateAccountUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -143,11 +145,11 @@ public class CreateAccount extends javax.swing.JFrame {
         //assigns the username, password, and reentered password to their own variables
         
         //database connection details
-        String host = "jdbc:mysql://localhost:3306/csi2999?zeroDateTimeBehavior=CONVERT_TO_NULL [root on Default schema]";
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
         int port = 3306;
-        String DatabaseUsername = "root";
-        String DatabasePassword = "";
-        String Database = "csi2999";
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
         
         //verify if passwords match with this if structure 
         if(!pass.equals(repass)) {
@@ -155,11 +157,16 @@ public class CreateAccount extends javax.swing.JFrame {
             return;
         }
         try{
-            //establish connection with the database
+            try {
+                //establish connection with the database
+                Class.forName("mssql-jdbc-12.2.0.jre8");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
+            }
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
          
             //check if username exists
-            String checkQuery = "SELECT username FROM logins WHERE username = ?";
+            String checkQuery = "SELECT username FROM log WHERE username = ?";
             PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
             checkStmt.setString(1, user);
 
@@ -167,11 +174,11 @@ public class CreateAccount extends javax.swing.JFrame {
             
             // If the username already exists, notify the user
             if (resultSet.next()) {
-                System.out.println("Username already exists!");
+                JOptionPane.showMessageDialog(null,"Username already exists!");            
             }
             else{
                 // Insert the new account into the database
-                String insertQuery = "INSERT INTO logins (username, password) VALUES (?, ?)";
+                String insertQuery = "INSERT INTO log (username, password) VALUES (?, ?)";
                 PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
                 insertStmt.setString(1, user);
                 insertStmt.setString(2, pass);
@@ -187,8 +194,6 @@ public class CreateAccount extends javax.swing.JFrame {
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        
-        // can use this to create success! box "JOptionPane.showMessageDialog(null,"Success!");"
     }//GEN-LAST:event_CreateAccountCreateButtonActionPerformed
 
     private void CreateAccountUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccountUsernameActionPerformed
