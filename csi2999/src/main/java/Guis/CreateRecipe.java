@@ -66,13 +66,13 @@ public class CreateRecipe extends javax.swing.JFrame {
             }
         });
         jPanel1.add(RecipeIDTextBox);
-        RecipeIDTextBox.setBounds(130, 170, 170, 22);
+        RecipeIDTextBox.setBounds(130, 170, 170, 23);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 255, 204));
         jLabel7.setText("Recipe I.D:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(40, 170, 80, 20);
+        jLabel7.setBounds(40, 170, 80, 17);
 
         ExitButton.setBackground(new java.awt.Color(255, 51, 51));
         ExitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 255, 204));
         jLabel6.setText("Ingredients:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(38, 278, 79, 25);
+        jLabel6.setBounds(38, 278, 85, 25);
 
         HowToCookTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         jPanel1.add(HowToCookTextBox);
@@ -137,7 +137,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 255, 204));
         jLabel2.setText("Description:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(38, 220, 80, 20);
+        jLabel2.setBounds(38, 220, 80, 17);
 
         DescriptionTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         DescriptionTextBox.addActionListener(new java.awt.event.ActionListener() {

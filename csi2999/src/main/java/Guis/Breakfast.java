@@ -84,7 +84,7 @@ public class Breakfast extends javax.swing.JFrame {
 
         breakfastDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(breakfastDropDown);
-        breakfastDropDown.setBounds(174, 79, 228, 22);
+        breakfastDropDown.setBounds(174, 79, 228, 23);
 
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);

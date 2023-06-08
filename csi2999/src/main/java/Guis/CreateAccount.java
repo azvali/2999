@@ -69,7 +69,7 @@ public class CreateAccount extends javax.swing.JFrame {
         reenter_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         reenter_label.setText("Re-enter Password:");
         jPanel1.add(reenter_label);
-        reenter_label.setBounds(264, 239, 127, 20);
+        reenter_label.setBounds(264, 239, 141, 17);
 
         CreateAccountUsername.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         CreateAccountUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public class CreateAccount extends javax.swing.JFrame {
         username_label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         username_label.setText("Username:");
         jPanel1.add(username_label);
-        username_label.setBounds(264, 170, 100, 20);
+        username_label.setBounds(264, 170, 100, 17);
 
         CreateAccountCreateButton.setBackground(new java.awt.Color(153, 153, 153));
         CreateAccountCreateButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -157,12 +157,12 @@ public class CreateAccount extends javax.swing.JFrame {
             return;
         }
         try{
-            try {
+            /*try {
                 //establish connection with the database
                 Class.forName("mssql-jdbc-12.2.0.jre8");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            }*/
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
          
             //check if username exists
