@@ -41,6 +41,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         DescriptionTextBox = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
         background6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,13 +67,13 @@ public class CreateRecipe extends javax.swing.JFrame {
             }
         });
         jPanel1.add(RecipeIDTextBox);
-        RecipeIDTextBox.setBounds(130, 170, 170, 23);
+        RecipeIDTextBox.setBounds(130, 170, 170, 22);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 255, 204));
         jLabel7.setText("Recipe I.D:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(40, 170, 80, 17);
+        jLabel7.setBounds(40, 170, 80, 20);
 
         ExitButton.setBackground(new java.awt.Color(255, 51, 51));
         ExitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -83,7 +84,7 @@ public class CreateRecipe extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ExitButton);
-        ExitButton.setBounds(390, 460, 90, 30);
+        ExitButton.setBounds(430, 450, 90, 30);
 
         SubmitButton.setBackground(new java.awt.Color(153, 255, 153));
         SubmitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -94,13 +95,13 @@ public class CreateRecipe extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SubmitButton);
-        SubmitButton.setBounds(260, 460, 90, 30);
+        SubmitButton.setBounds(300, 450, 90, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 255, 204));
         jLabel6.setText("Ingredients:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(38, 278, 85, 25);
+        jLabel6.setBounds(38, 278, 79, 25);
 
         HowToCookTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         jPanel1.add(HowToCookTextBox);
@@ -137,7 +138,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 255, 204));
         jLabel2.setText("Description:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(38, 220, 80, 17);
+        jLabel2.setBounds(38, 220, 80, 20);
 
         DescriptionTextBox.setMinimumSize(new java.awt.Dimension(60, 20));
         DescriptionTextBox.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +148,15 @@ public class CreateRecipe extends javax.swing.JFrame {
         });
         jPanel1.add(DescriptionTextBox);
         DescriptionTextBox.setBounds(130, 210, 644, 40);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Category", "Breakfast", "Lunch", "Dinner" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(40, 120, 120, 22);
 
         background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
         jPanel1.add(background6);
@@ -190,6 +200,10 @@ public class CreateRecipe extends javax.swing.JFrame {
         AdminControlPanel admin = new AdminControlPanel();
         admin.setVisible(true);
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,6 +249,7 @@ public class CreateRecipe extends javax.swing.JFrame {
     private javax.swing.JTextField RecipeIDTextBox;
     private javax.swing.JButton SubmitButton;
     private javax.swing.JLabel background6;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
