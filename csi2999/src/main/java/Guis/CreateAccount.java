@@ -166,7 +166,7 @@ public class CreateAccount extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
          
             //check if username exists
-            String checkQuery = "SELECT username FROM log WHERE username = ?";
+            String checkQuery = "SELECT username FROM user WHERE username = ?";
             PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
             checkStmt.setString(1, user);
 
@@ -178,7 +178,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
             else{
                 // Insert the new account into the database
-                String insertQuery = "INSERT INTO log (username, password) VALUES (?, ?)";
+                String insertQuery = "INSERT INTO user (username, password) VALUES (?, ?)";
                 PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
                 insertStmt.setString(1, user);
                 insertStmt.setString(2, pass);
