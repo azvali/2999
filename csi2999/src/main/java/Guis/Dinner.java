@@ -4,17 +4,46 @@
  */
 package Guis;
 
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author harsi
  */
 public class Dinner extends javax.swing.JFrame {
-
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        String id;
     /**
      * Creates new form Dinner
      */
     public Dinner() {
-        initComponents();
+        initComponents();                 
+        try{
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            Statement stm = conn.createStatement();
+           ResultSet rs = stm.executeQuery("Select recipe_name from recipes.dinner");
+            while(rs.next()){
+                id = rs.getString("recipe_name");
+                dinnerDropDown.addItem(id);
+            }
+            conn.close();  
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     /**
@@ -46,15 +75,19 @@ public class Dinner extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
 
-        dinnerCookTimes.setForeground(new java.awt.Color(255, 255, 255));
-        dinnerCookTimes.setBorder(null);
+        dinnerCookTimes.setEditable(false);
         jPanel1.add(dinnerCookTimes);
         dinnerCookTimes.setBounds(26, 291, 376, 153);
+
+        dinnerIngredients.setEditable(false);
         jPanel1.add(dinnerIngredients);
         dinnerIngredients.setBounds(420, 291, 365, 153);
+
+        dinnerHowTo.setEditable(false);
         jPanel1.add(dinnerHowTo);
         dinnerHowTo.setBounds(420, 120, 365, 153);
 
+        dinnerDescription.setEditable(false);
         dinnerDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 dinnerDescriptionComponentHidden(evt);
@@ -73,7 +106,12 @@ public class Dinner extends javax.swing.JFrame {
         jPanel1.add(dinnerReturnButton);
         dinnerReturnButton.setBounds(461, 79, 92, 23);
 
-        dinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        dinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Recipe" }));
+        dinnerDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dinnerDropDownActionPerformed(evt);
+            }
+        });
         jPanel1.add(dinnerDropDown);
         dinnerDropDown.setBounds(174, 79, 228, 22);
 
@@ -104,7 +142,7 @@ public class Dinner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dinnerDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_dinnerDescriptionComponentHidden
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_dinnerDescriptionComponentHidden
 
     private void dinnerReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerReturnButtonActionPerformed
@@ -113,6 +151,39 @@ public class Dinner extends javax.swing.JFrame {
         AllRecipes a = new AllRecipes();
         a.setVisible(true);
     }//GEN-LAST:event_dinnerReturnButtonActionPerformed
+
+    private void dinnerDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerDropDownActionPerformed
+
+        try{
+        Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+        Statement stm = conn.createStatement();
+        Object item = dinnerDropDown.getSelectedItem();
+        ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
+            dinnerDropDown.addItemListener(new ItemListener() {
+                @Override
+                public void itemStateChanged(ItemEvent e) {
+                    try {
+                        while(rs.next()){
+                            try {
+                                dinnerDescription.setText(rs.getString("description"));
+                                dinnerHowTo.setText(rs.getString("how_to_cook"));
+                                dinnerCookTimes.setText(rs.getString("cook_time"));
+                                dinnerIngredients.setText(rs.getString("ingredients"));
+                            } catch (SQLException ex) {
+                                Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }   
+            });  
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }      
+        
+    }//GEN-LAST:event_dinnerDropDownActionPerformed
 
     /**
      * @param args the command line arguments
