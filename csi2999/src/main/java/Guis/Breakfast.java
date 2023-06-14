@@ -4,6 +4,13 @@
  */
 package Guis;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ethan
@@ -15,6 +22,7 @@ public class Breakfast extends javax.swing.JFrame {
      */
     public Breakfast() {
         initComponents();
+        UpdateCombo();
     }
 
     /**
@@ -27,12 +35,16 @@ public class Breakfast extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        BreakfastHowTo = new javax.swing.JTextField();
-        BreakfastIngredients = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        BreakfastDescription = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        BreakfastHowTo = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        BreakfastCookTimes = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        BreakfastIngredients = new javax.swing.JTextArea();
         BreakfastReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        BreakfastCookTimes = new javax.swing.JTextField();
-        BreakfastDescription = new javax.swing.JTextField();
         breakfastDropDown = new javax.swing.JComboBox<>();
         breakfastimage = new javax.swing.JLabel();
 
@@ -46,10 +58,46 @@ public class Breakfast extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
-        jPanel2.add(BreakfastHowTo);
-        BreakfastHowTo.setBounds(420, 120, 365, 153);
-        jPanel2.add(BreakfastIngredients);
-        BreakfastIngredients.setBounds(420, 291, 365, 153);
+
+        BreakfastDescription.setEditable(false);
+        BreakfastDescription.setColumns(20);
+        BreakfastDescription.setLineWrap(true);
+        BreakfastDescription.setRows(5);
+        BreakfastDescription.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(BreakfastDescription);
+
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(30, 120, 370, 150);
+
+        BreakfastHowTo.setEditable(false);
+        BreakfastHowTo.setColumns(20);
+        BreakfastHowTo.setLineWrap(true);
+        BreakfastHowTo.setRows(5);
+        BreakfastHowTo.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(BreakfastHowTo);
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(420, 120, 370, 150);
+
+        BreakfastCookTimes.setEditable(false);
+        BreakfastCookTimes.setColumns(20);
+        BreakfastCookTimes.setLineWrap(true);
+        BreakfastCookTimes.setRows(5);
+        BreakfastCookTimes.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(BreakfastCookTimes);
+
+        jPanel2.add(jScrollPane3);
+        jScrollPane3.setBounds(30, 290, 370, 150);
+
+        BreakfastIngredients.setEditable(false);
+        BreakfastIngredients.setColumns(20);
+        BreakfastIngredients.setLineWrap(true);
+        BreakfastIngredients.setRows(5);
+        BreakfastIngredients.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(BreakfastIngredients);
+
+        jPanel2.add(jScrollPane4);
+        jScrollPane4.setBounds(420, 290, 370, 150);
 
         BreakfastReturnButton.setText("Return");
         BreakfastReturnButton.setName("BreakfastReturnButton"); // NOI18N
@@ -69,22 +117,14 @@ public class Breakfast extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(300, 0, 200, 60);
 
-        BreakfastCookTimes.setForeground(new java.awt.Color(255, 255, 255));
-        BreakfastCookTimes.setBorder(null);
-        jPanel2.add(BreakfastCookTimes);
-        BreakfastCookTimes.setBounds(26, 291, 376, 153);
-
-        BreakfastDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                BreakfastDescriptionComponentHidden(evt);
+        breakfastDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Recipe" }));
+        breakfastDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                breakfastDropDownActionPerformed(evt);
             }
         });
-        jPanel2.add(BreakfastDescription);
-        BreakfastDescription.setBounds(26, 120, 376, 153);
-
-        breakfastDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(breakfastDropDown);
-        breakfastDropDown.setBounds(174, 79, 228, 23);
+        breakfastDropDown.setBounds(174, 79, 228, 22);
 
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);
@@ -111,10 +151,62 @@ public class Breakfast extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_BreakfastReturnButtonActionPerformed
 
-    private void BreakfastDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_BreakfastDescriptionComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BreakfastDescriptionComponentHidden
+    private void breakfastDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breakfastDropDownActionPerformed
+        //combo box function
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
 
+             //try block to execute the sql query to get matching info from combobox
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            Statement stm = conn.createStatement();
+            Object item = breakfastDropDown.getSelectedItem();
+                        ResultSet rs = stm.executeQuery("SELECT * FROM recipes.breakfast WHERE recipe_name = '"+item+"'");
+                        rs.next();
+                        BreakfastDescription.setText(rs.getString("description"));
+                        BreakfastHowTo.setText(rs.getString("how_to_cook"));
+                        BreakfastCookTimes.setText(rs.getString("cook_time"));
+                        BreakfastIngredients.setText(rs.getString("ingredients"));
+                        conn.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_breakfastDropDownActionPerformed
+ private void UpdateCombo(){
+        //gather all information from breakfast table
+        String sql = "select * from recipes.breakfast";
+        
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+      
+        
+        //try block to execute the sql query to get all info from breakfast table
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            
+            // execute query
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            
+            //add names to combo box
+            while(rs.next()){
+                breakfastDropDown.addItem(rs.getString("recipe_name"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -151,14 +243,18 @@ public class Breakfast extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField BreakfastCookTimes;
-    private javax.swing.JTextField BreakfastDescription;
-    private javax.swing.JTextField BreakfastHowTo;
-    private javax.swing.JTextField BreakfastIngredients;
+    private javax.swing.JTextArea BreakfastCookTimes;
+    private javax.swing.JTextArea BreakfastDescription;
+    private javax.swing.JTextArea BreakfastHowTo;
+    private javax.swing.JTextArea BreakfastIngredients;
     private javax.swing.JButton BreakfastReturnButton;
     private javax.swing.JComboBox<String> breakfastDropDown;
     private javax.swing.JLabel breakfastimage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 }

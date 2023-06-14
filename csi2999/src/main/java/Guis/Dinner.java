@@ -20,30 +20,12 @@ import javax.swing.JOptionPane;
  * @author harsi
  */
 public class Dinner extends javax.swing.JFrame {
-        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
-        int port = 3306;
-        String DatabaseUsername = "csi2999";
-        String DatabasePassword = "bhl7^W0O#qq2";
-        String Database = "login";
-        String id;
     /**
      * Creates new form Dinner
      */
     public Dinner() {
-        initComponents();                 
-        try{
-            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
-            Statement stm = conn.createStatement();
-           ResultSet rs = stm.executeQuery("Select recipe_name from recipes.dinner");
-            while(rs.next()){
-                id = rs.getString("recipe_name");
-                dinnerDropDown.addItem(id);
-            }
-            conn.close();  
-        }
-        catch(SQLException e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
+        initComponents();  
+        UpdateCombo();
     }
 
     /**
@@ -187,6 +169,13 @@ public class Dinner extends javax.swing.JFrame {
     }//GEN-LAST:event_dinnerReturnButtonActionPerformed
 
     private void dinnerDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerDropDownActionPerformed
+        //combo box function
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
 
     try{
         Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
@@ -205,7 +194,34 @@ public class Dinner extends javax.swing.JFrame {
         }      
         
     }//GEN-LAST:event_dinnerDropDownActionPerformed
+private void UpdateCombo(){
+        //gather all information from dinner table
+        String sql = "select * from recipes.dinner";
+        
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
 
+        //try block to execute the sql query to get all info from dinner table
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            
+            // execute query
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            
+            //add names to combo box
+            while(rs.next()){
+                dinnerDropDown.addItem(rs.getString("recipe_name"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
     /**
      * @param args the command line arguments
      */
