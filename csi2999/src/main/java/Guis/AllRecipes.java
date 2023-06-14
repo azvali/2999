@@ -123,17 +123,16 @@ public class AllRecipes extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         // TODO add your handling code here:
-        if(Login.GlobalUser.equals("admin") && Login.GlobalPass.equals("1234")){
+        if(Login.IfAdmin == true){
                 dispose();
                 AdminControlPanel AdminPage = new AdminControlPanel();
                 AdminPage.setVisible(true);
 
             }
-            else if(Login.GlobalUser.equals("user") && Login.GlobalPass.equals("1234")){
+            else{
                 dispose();
                 UserMain UserPage = new UserMain();
                 UserPage.setVisible(true);
-
             }
     }//GEN-LAST:event_homeButtonActionPerformed
 

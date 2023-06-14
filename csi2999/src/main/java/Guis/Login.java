@@ -4,6 +4,11 @@
  */
 package Guis;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,10 +16,7 @@ import javax.swing.JOptionPane;
  * @author azval
  */
 public class Login extends javax.swing.JFrame {
-    
-    public static String GlobalUser;
-    public static String GlobalPass;
-    
+    public static boolean IfAdmin;
     /**
      * Creates new form Login
      */
@@ -145,27 +147,57 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateANewAccountActionPerformed
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
-        // TEMPORARY Login Button Functionality
-        String user = UsernameTextBox.getText();
-        String password = PasswordTextBox.getText();
-        GlobalUser = user;
-        GlobalPass = password;
 
-        if(user.equals("admin") && password.equals("1234")){
-                dispose();
-                AdminControlPanel AdminPage = new AdminControlPanel();
-                AdminPage.setVisible(true);
-
-            }
-            else if(user.equals("user") && password.equals("1234")){
-                dispose();
-                UserMain UserPage = new UserMain();
-                UserPage.setVisible(true);
-
+        String userEntry = UsernameTextBox.getText();
+        String passEntry = PasswordTextBox.getText();
+        
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+        try{
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+         
+            //check if username exists
+            String checkQuery = "SELECT * FROM user WHERE username = ?";
+            PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+            checkStmt.setString(1, userEntry);
+            ResultSet resultSet = checkStmt.executeQuery();
+            
+            //if username exists
+            if(resultSet.next()){
+               if(resultSet.getString("password").equals(passEntry) && resultSet.getInt("admin") == 1){
+                   dispose();
+                   AdminControlPanel a = new AdminControlPanel();
+                   a.setVisible(true);
+                   IfAdmin = true;
+                }
+               else if(resultSet.getString("password").equals(passEntry) && resultSet.getInt("admin") == 0){
+                   dispose();
+                   UserMain u = new UserMain();
+                   u.setVisible(true);
+                   IfAdmin = false;
+               }
+               else{
+                   JOptionPane.showMessageDialog(null,"Invalid Username/Password.");
+               }
             }
             else{
-                JOptionPane.showMessageDialog(null,"Incorrect username/password");
+                // username doesnt exist
+                JOptionPane.showMessageDialog(null,"Invalid Username/Password.");
             }
+            //close resources
+                resultSet.close();
+                checkStmt.close();
+                conn.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
     }//GEN-LAST:event_EnterButtonActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
