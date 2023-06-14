@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -129,8 +130,6 @@ public class Lunch extends javax.swing.JFrame {
 
     private void LunchDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LunchDropDownActionPerformed
         //combo box function
-        //gather all information from lunch table
-        String sql = "select * from recipes.lunch";
         
         //database connection details
         String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
@@ -144,15 +143,15 @@ public class Lunch extends javax.swing.JFrame {
         try{
             //create connection
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
-            
-            // execute query
-            PreparedStatement pst = conn.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            
-            //add names to combo box
-            while(rs.next()){
-                LunchDropDown.addItem(rs.getString("recipe_name"));
-            }
+            Statement stm = conn.createStatement();
+            Object item = LunchDropDown.getSelectedItem();
+                        ResultSet rs = stm.executeQuery("SELECT * FROM recipes.lunch WHERE recipe_name = '"+item+"'");
+                        rs.next();
+                        LunchDescription.setText(rs.getString("description"));
+                        LunchHowTo.setText(rs.getString("how_to_cook"));
+                        LunchCookTimes.setText(rs.getString("cook_time"));
+                        LunchIngredients.setText(rs.getString("ingredients"));
+                        conn.close();
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, e);
         }
