@@ -154,31 +154,19 @@ public class Dinner extends javax.swing.JFrame {
 
     private void dinnerDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerDropDownActionPerformed
 
-        try{
+    try{
         Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
         Statement stm = conn.createStatement();
-        Object item = dinnerDropDown.getSelectedItem();
-        ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
-            dinnerDropDown.addItemListener(new ItemListener() {
-                @Override
-                public void itemStateChanged(ItemEvent e) {
-                    try {
-                        while(rs.next()){
-                            try {
-                                dinnerDescription.setText(rs.getString("description"));
-                                dinnerHowTo.setText(rs.getString("how_to_cook"));
-                                dinnerCookTimes.setText(rs.getString("cook_time"));
-                                dinnerIngredients.setText(rs.getString("ingredients"));
-                            } catch (SQLException ex) {
-                                Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        Logger.getLogger(Dinner.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }   
-            });  
-        }
+                        Object item = dinnerDropDown.getSelectedItem();
+                        ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
+                        rs.next();
+                        dinnerDescription.setText(rs.getString("description"));
+                        dinnerDescription.setText(rs.getString("description"));
+                        dinnerHowTo.setText(rs.getString("how_to_cook"));
+                        dinnerCookTimes.setText(rs.getString("cook_time"));
+                        dinnerIngredients.setText(rs.getString("ingredients"));
+                        conn.close();
+        } 
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }      
