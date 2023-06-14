@@ -56,12 +56,16 @@ public class Dinner extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        dinnerCookTimes = new javax.swing.JTextField();
-        dinnerIngredients = new javax.swing.JTextField();
-        dinnerHowTo = new javax.swing.JTextField();
-        dinnerDescription = new javax.swing.JTextField();
         dinnerReturnButton = new javax.swing.JButton();
         dinnerDropDown = new javax.swing.JComboBox<>();
+        dinnerHowToPane = new javax.swing.JScrollPane();
+        dinnerHowTo = new javax.swing.JTextArea();
+        dinnerIngredientsPane = new javax.swing.JScrollPane();
+        dinnerIngredients = new javax.swing.JTextArea();
+        dinnerDescriptionPane = new javax.swing.JScrollPane();
+        dinnerDescription = new javax.swing.JTextArea();
+        dinnerCookTimesPane = new javax.swing.JScrollPane();
+        dinnerCookTimes = new javax.swing.JTextArea();
         dinner = new javax.swing.JLabel();
         dinnerimage = new javax.swing.JLabel();
 
@@ -74,27 +78,6 @@ public class Dinner extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel1.setLayout(null);
-
-        dinnerCookTimes.setEditable(false);
-        jPanel1.add(dinnerCookTimes);
-        dinnerCookTimes.setBounds(26, 291, 376, 153);
-
-        dinnerIngredients.setEditable(false);
-        jPanel1.add(dinnerIngredients);
-        dinnerIngredients.setBounds(420, 291, 365, 153);
-
-        dinnerHowTo.setEditable(false);
-        jPanel1.add(dinnerHowTo);
-        dinnerHowTo.setBounds(420, 120, 365, 153);
-
-        dinnerDescription.setEditable(false);
-        dinnerDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                dinnerDescriptionComponentHidden(evt);
-            }
-        });
-        jPanel1.add(dinnerDescription);
-        dinnerDescription.setBounds(26, 120, 376, 153);
 
         dinnerReturnButton.setText("Return");
         dinnerReturnButton.setName("dinnerReturnButton"); // NOI18N
@@ -114,6 +97,61 @@ public class Dinner extends javax.swing.JFrame {
         });
         jPanel1.add(dinnerDropDown);
         dinnerDropDown.setBounds(174, 79, 228, 22);
+
+        dinnerHowToPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerHowToPane.setFocusable(false);
+
+        dinnerHowTo.setEditable(false);
+        dinnerHowTo.setColumns(20);
+        dinnerHowTo.setLineWrap(true);
+        dinnerHowTo.setRows(5);
+        dinnerHowTo.setWrapStyleWord(true);
+        dinnerHowTo.setAutoscrolls(false);
+        dinnerHowTo.setFocusable(false);
+        dinnerHowToPane.setViewportView(dinnerHowTo);
+
+        jPanel1.add(dinnerHowToPane);
+        dinnerHowToPane.setBounds(420, 120, 370, 150);
+
+        dinnerIngredientsPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerIngredientsPane.setFocusable(false);
+
+        dinnerIngredients.setEditable(false);
+        dinnerIngredients.setColumns(20);
+        dinnerIngredients.setLineWrap(true);
+        dinnerIngredients.setRows(5);
+        dinnerIngredients.setWrapStyleWord(true);
+        dinnerIngredientsPane.setViewportView(dinnerIngredients);
+
+        jPanel1.add(dinnerIngredientsPane);
+        dinnerIngredientsPane.setBounds(420, 290, 370, 150);
+
+        dinnerDescriptionPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerDescriptionPane.setFocusable(false);
+
+        dinnerDescription.setEditable(false);
+        dinnerDescription.setColumns(20);
+        dinnerDescription.setLineWrap(true);
+        dinnerDescription.setRows(5);
+        dinnerDescription.setWrapStyleWord(true);
+        dinnerDescriptionPane.setViewportView(dinnerDescription);
+
+        jPanel1.add(dinnerDescriptionPane);
+        dinnerDescriptionPane.setBounds(30, 120, 370, 150);
+
+        dinnerCookTimesPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerCookTimesPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        dinnerCookTimesPane.setFocusable(false);
+
+        dinnerCookTimes.setEditable(false);
+        dinnerCookTimes.setColumns(20);
+        dinnerCookTimes.setLineWrap(true);
+        dinnerCookTimes.setRows(5);
+        dinnerCookTimes.setWrapStyleWord(true);
+        dinnerCookTimesPane.setViewportView(dinnerCookTimes);
+
+        jPanel1.add(dinnerCookTimesPane);
+        dinnerCookTimesPane.setBounds(30, 290, 370, 150);
 
         dinner.setBackground(new java.awt.Color(153, 255, 153));
         dinner.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -141,10 +179,6 @@ public class Dinner extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dinnerDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_dinnerDescriptionComponentHidden
-
-    }//GEN-LAST:event_dinnerDescriptionComponentHidden
-
     private void dinnerReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dinnerReturnButtonActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -160,7 +194,6 @@ public class Dinner extends javax.swing.JFrame {
                         Object item = dinnerDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
                         rs.next();
-                        dinnerDescription.setText(rs.getString("description"));
                         dinnerDescription.setText(rs.getString("description"));
                         dinnerHowTo.setText(rs.getString("how_to_cook"));
                         dinnerCookTimes.setText(rs.getString("cook_time"));
@@ -210,11 +243,15 @@ public class Dinner extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dinner;
-    private javax.swing.JTextField dinnerCookTimes;
-    private javax.swing.JTextField dinnerDescription;
+    private javax.swing.JTextArea dinnerCookTimes;
+    private javax.swing.JScrollPane dinnerCookTimesPane;
+    private javax.swing.JTextArea dinnerDescription;
+    private javax.swing.JScrollPane dinnerDescriptionPane;
     private javax.swing.JComboBox<String> dinnerDropDown;
-    private javax.swing.JTextField dinnerHowTo;
-    private javax.swing.JTextField dinnerIngredients;
+    private javax.swing.JTextArea dinnerHowTo;
+    private javax.swing.JScrollPane dinnerHowToPane;
+    private javax.swing.JTextArea dinnerIngredients;
+    private javax.swing.JScrollPane dinnerIngredientsPane;
     private javax.swing.JButton dinnerReturnButton;
     private javax.swing.JLabel dinnerimage;
     private javax.swing.JPanel jPanel1;
