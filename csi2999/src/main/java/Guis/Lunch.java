@@ -35,10 +35,14 @@ public class Lunch extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        LunchDescription = new javax.swing.JTextField();
-        LunchHowTo = new javax.swing.JTextField();
-        LunchIngredients = new javax.swing.JTextField();
-        LunchCookTimes = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        LunchHowToCook = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        LunchCookTimes = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        LunchDescription = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        LunchIngredients = new javax.swing.JTextArea();
         LunchDropDown = new javax.swing.JComboBox<>();
         lunchReturnButton = new javax.swing.JButton();
         lunch = new javax.swing.JLabel();
@@ -56,22 +60,47 @@ public class Lunch extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
 
-        LunchDescription.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                LunchDescriptionComponentHidden(evt);
-            }
-        });
-        jPanel2.add(LunchDescription);
-        LunchDescription.setBounds(26, 120, 376, 153);
-        jPanel2.add(LunchHowTo);
-        LunchHowTo.setBounds(420, 120, 365, 153);
-        jPanel2.add(LunchIngredients);
-        LunchIngredients.setBounds(420, 291, 365, 153);
+        jScrollPane3.setViewportView(null);
 
-        LunchCookTimes.setForeground(new java.awt.Color(255, 255, 255));
-        LunchCookTimes.setBorder(null);
-        jPanel2.add(LunchCookTimes);
-        LunchCookTimes.setBounds(26, 291, 376, 153);
+        LunchHowToCook.setEditable(false);
+        LunchHowToCook.setColumns(20);
+        LunchHowToCook.setLineWrap(true);
+        LunchHowToCook.setRows(5);
+        LunchHowToCook.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(LunchHowToCook);
+
+        jPanel2.add(jScrollPane3);
+        jScrollPane3.setBounds(410, 120, 380, 160);
+
+        LunchCookTimes.setEditable(false);
+        LunchCookTimes.setColumns(20);
+        LunchCookTimes.setLineWrap(true);
+        LunchCookTimes.setRows(5);
+        LunchCookTimes.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(LunchCookTimes);
+
+        jPanel2.add(jScrollPane4);
+        jScrollPane4.setBounds(10, 300, 380, 160);
+
+        LunchDescription.setEditable(false);
+        LunchDescription.setColumns(20);
+        LunchDescription.setLineWrap(true);
+        LunchDescription.setRows(5);
+        LunchDescription.setWrapStyleWord(true);
+        jScrollPane5.setViewportView(LunchDescription);
+
+        jPanel2.add(jScrollPane5);
+        jScrollPane5.setBounds(10, 120, 380, 160);
+
+        LunchIngredients.setEditable(false);
+        LunchIngredients.setColumns(20);
+        LunchIngredients.setLineWrap(true);
+        LunchIngredients.setRows(5);
+        LunchIngredients.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(LunchIngredients);
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(410, 300, 380, 160);
 
         LunchDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,10 +146,6 @@ public class Lunch extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LunchDescriptionComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_LunchDescriptionComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LunchDescriptionComponentHidden
-
     private void lunchReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lunchReturnButtonActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -130,7 +155,6 @@ public class Lunch extends javax.swing.JFrame {
 
     private void LunchDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LunchDropDownActionPerformed
         //combo box function
-        
         //database connection details
         String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
         int port = 3306;
@@ -148,7 +172,7 @@ public class Lunch extends javax.swing.JFrame {
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.lunch WHERE recipe_name = '"+item+"'");
                         rs.next();
                         LunchDescription.setText(rs.getString("description"));
-                        LunchHowTo.setText(rs.getString("how_to_cook"));
+                        LunchHowToCook.setText(rs.getString("how_to_cook"));
                         LunchCookTimes.setText(rs.getString("cook_time"));
                         LunchIngredients.setText(rs.getString("ingredients"));
                         conn.close();
@@ -222,12 +246,16 @@ public class Lunch extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField LunchCookTimes;
-    private javax.swing.JTextField LunchDescription;
+    private javax.swing.JTextArea LunchCookTimes;
+    private javax.swing.JTextArea LunchDescription;
     private javax.swing.JComboBox<String> LunchDropDown;
-    private javax.swing.JTextField LunchHowTo;
-    private javax.swing.JTextField LunchIngredients;
+    private javax.swing.JTextArea LunchHowToCook;
+    private javax.swing.JTextArea LunchIngredients;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lunch;
     private javax.swing.JButton lunchReturnButton;
     private javax.swing.JLabel lunchimage;

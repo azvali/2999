@@ -62,9 +62,9 @@ public class Login extends javax.swing.JFrame {
         EnterPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         EnterPassword.setText("Enter Password:");
         jPanel1.add(EnterPassword);
-        EnterPassword.setBounds(277, 204, 110, 17);
+        EnterPassword.setBounds(277, 204, 110, 20);
         jPanel1.add(PasswordTextBox);
-        PasswordTextBox.setBounds(408, 204, 119, 23);
+        PasswordTextBox.setBounds(408, 204, 119, 22);
 
         LoginIntro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LoginIntro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         EnterUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         EnterUsername.setText("Enter Username:");
         jPanel1.add(EnterUsername);
-        EnterUsername.setBounds(277, 169, 113, 17);
+        EnterUsername.setBounds(277, 169, 101, 20);
 
         CreateANewAccount.setBackground(new java.awt.Color(255, 255, 153));
         CreateANewAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(CreateANewAccount);
-        CreateANewAccount.setBounds(277, 265, 220, 28);
+        CreateANewAccount.setBounds(277, 265, 220, 32);
 
         EnterButton.setBackground(new java.awt.Color(0, 204, 0));
         EnterButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -97,7 +97,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(EnterButton);
-        EnterButton.setBounds(155, 265, 80, 28);
+        EnterButton.setBounds(155, 265, 80, 32);
 
         Exit.setBackground(new java.awt.Color(255, 51, 51));
         Exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -117,7 +117,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(welcome);
         welcome.setBounds(150, 0, 520, 90);
         jPanel1.add(UsernameTextBox);
-        UsernameTextBox.setBounds(410, 170, 120, 23);
+        UsernameTextBox.setBounds(410, 170, 120, 22);
 
         background.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background.png"));
         jPanel1.add(background);
