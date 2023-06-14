@@ -128,8 +128,9 @@ public class Lunch extends javax.swing.JFrame {
     }//GEN-LAST:event_lunchReturnButtonActionPerformed
 
     private void LunchDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LunchDropDownActionPerformed
+        //combo box function
         //gather all information from lunch table
-        /*String sql = "select * from recipes.lunch";
+        String sql = "select * from recipes.lunch";
         
         //database connection details
         String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
@@ -138,9 +139,8 @@ public class Lunch extends javax.swing.JFrame {
         String DatabasePassword = "bhl7^W0O#qq2";
         String Database = "login";
         
-      
         
-        //try block to execute the sql query to get all info from lunch table
+             //try block to execute the sql query to get matching info from combobox
         try{
             //create connection
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
@@ -155,8 +155,7 @@ public class Lunch extends javax.swing.JFrame {
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, e);
-        }*/
-        
+        }
     }//GEN-LAST:event_LunchDropDownActionPerformed
     private void UpdateCombo(){
         //gather all information from lunch table
