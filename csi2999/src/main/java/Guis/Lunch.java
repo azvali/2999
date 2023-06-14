@@ -4,6 +4,12 @@
  */
 package Guis;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author azval
@@ -15,6 +21,7 @@ public class Lunch extends javax.swing.JFrame {
      */
     public Lunch() {
         initComponents();
+        UpdateCombo();
     }
 
     /**
@@ -31,7 +38,7 @@ public class Lunch extends javax.swing.JFrame {
         LunchHowTo = new javax.swing.JTextField();
         LunchIngredients = new javax.swing.JTextField();
         LunchCookTimes = new javax.swing.JTextField();
-        lunchDropDown = new javax.swing.JComboBox<>();
+        LunchDropDown = new javax.swing.JComboBox<>();
         lunchReturnButton = new javax.swing.JButton();
         lunch = new javax.swing.JLabel();
         lunchimage = new javax.swing.JLabel();
@@ -65,9 +72,14 @@ public class Lunch extends javax.swing.JFrame {
         jPanel2.add(LunchCookTimes);
         LunchCookTimes.setBounds(26, 291, 376, 153);
 
-        lunchDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(lunchDropDown);
-        lunchDropDown.setBounds(174, 79, 228, 22);
+        LunchDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        LunchDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LunchDropDownActionPerformed(evt);
+            }
+        });
+        jPanel2.add(LunchDropDown);
+        LunchDropDown.setBounds(174, 79, 228, 22);
 
         lunchReturnButton.setText("Return");
         lunchReturnButton.setName("lunchReturnButton"); // NOI18N
@@ -116,6 +128,67 @@ public class Lunch extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_lunchReturnButtonActionPerformed
 
+    private void LunchDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LunchDropDownActionPerformed
+        //gather all information from lunch table
+        /*String sql = "select * from recipes.lunch";
+        
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+      
+        
+        //try block to execute the sql query to get all info from lunch table
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            
+            // execute query
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            
+            //add names to combo box
+            while(rs.next()){
+                LunchDropDown.addItem(rs.getString("recipe_name"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }*/
+        
+    }//GEN-LAST:event_LunchDropDownActionPerformed
+    private void UpdateCombo(){
+        //gather all information from lunch table
+        String sql = "select * from recipes.lunch";
+        
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+      
+        
+        //try block to execute the sql query to get all info from lunch table
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            
+            // execute query
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            
+            //add names to combo box
+            while(rs.next()){
+                LunchDropDown.addItem(rs.getString("recipe_name"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -154,11 +227,11 @@ public class Lunch extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField LunchCookTimes;
     private javax.swing.JTextField LunchDescription;
+    private javax.swing.JComboBox<String> LunchDropDown;
     private javax.swing.JTextField LunchHowTo;
     private javax.swing.JTextField LunchIngredients;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lunch;
-    private javax.swing.JComboBox<String> lunchDropDown;
     private javax.swing.JButton lunchReturnButton;
     private javax.swing.JLabel lunchimage;
     // End of variables declaration//GEN-END:variables
