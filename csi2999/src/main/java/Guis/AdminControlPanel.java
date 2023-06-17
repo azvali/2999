@@ -94,7 +94,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(310, 340, 170, 100);
 
-        background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
+        background5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background.png"));
         jPanel1.add(background5);
         background5.setBounds(0, 0, 800, 500);
 

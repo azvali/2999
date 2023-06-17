@@ -46,58 +46,83 @@ public class Breakfast extends javax.swing.JFrame {
         BreakfastReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         breakfastDropDown = new javax.swing.JComboBox<>();
+        breakfast_image = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         breakfastimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 500));
-        setMinimumSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(1000, 800));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 204));
-        jPanel2.setMaximumSize(new java.awt.Dimension(800, 500));
-        jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
-        jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1000, 800));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1000, 800));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 800));
         jPanel2.setLayout(null);
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(380, 140));
+
         BreakfastDescription.setEditable(false);
+        BreakfastDescription.setBackground(new java.awt.Color(204, 204, 204));
         BreakfastDescription.setColumns(20);
+        BreakfastDescription.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         BreakfastDescription.setLineWrap(true);
         BreakfastDescription.setRows(5);
         BreakfastDescription.setWrapStyleWord(true);
         jScrollPane1.setViewportView(BreakfastDescription);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 120, 370, 150);
+        jScrollPane1.setBounds(320, 150, 380, 140);
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(270, 140));
 
         BreakfastHowTo.setEditable(false);
+        BreakfastHowTo.setBackground(new java.awt.Color(204, 204, 204));
         BreakfastHowTo.setColumns(20);
+        BreakfastHowTo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         BreakfastHowTo.setLineWrap(true);
         BreakfastHowTo.setRows(5);
         BreakfastHowTo.setWrapStyleWord(true);
         jScrollPane2.setViewportView(BreakfastHowTo);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(420, 120, 370, 150);
+        jScrollPane2.setBounds(20, 330, 680, 450);
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(680, 450));
 
         BreakfastCookTimes.setEditable(false);
+        BreakfastCookTimes.setBackground(new java.awt.Color(204, 204, 204));
         BreakfastCookTimes.setColumns(20);
+        BreakfastCookTimes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         BreakfastCookTimes.setLineWrap(true);
         BreakfastCookTimes.setRows(5);
         BreakfastCookTimes.setWrapStyleWord(true);
         jScrollPane3.setViewportView(BreakfastCookTimes);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(30, 290, 370, 150);
+        jScrollPane3.setBounds(720, 150, 270, 140);
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(270, 450));
 
         BreakfastIngredients.setEditable(false);
+        BreakfastIngredients.setBackground(new java.awt.Color(204, 204, 204));
         BreakfastIngredients.setColumns(20);
+        BreakfastIngredients.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         BreakfastIngredients.setLineWrap(true);
         BreakfastIngredients.setRows(5);
         BreakfastIngredients.setWrapStyleWord(true);
         jScrollPane4.setViewportView(BreakfastIngredients);
 
         jPanel2.add(jScrollPane4);
-        jScrollPane4.setBounds(420, 290, 370, 150);
+        jScrollPane4.setBounds(720, 330, 270, 450);
 
         BreakfastReturnButton.setText("Return");
         BreakfastReturnButton.setName("BreakfastReturnButton"); // NOI18N
@@ -107,28 +132,53 @@ public class Breakfast extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BreakfastReturnButton);
-        BreakfastReturnButton.setBounds(461, 79, 92, 23);
+        BreakfastReturnButton.setBounds(610, 80, 92, 23);
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Breakfast");
+        jLabel1.setText("Breakfast Recipes");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(300, 0, 200, 60);
+        jLabel1.setBounds(310, 0, 340, 40);
 
-        breakfastDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Recipe" }));
         breakfastDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 breakfastDropDownActionPerformed(evt);
             }
         });
         jPanel2.add(breakfastDropDown);
-        breakfastDropDown.setBounds(174, 79, 228, 22);
+        breakfastDropDown.setBounds(270, 80, 228, 22);
+        jPanel2.add(breakfast_image);
+        breakfast_image.setBounds(20, 150, 280, 140);
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INSTRUCTIONS");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(250, 300, 230, 30);
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("INGREDIENTS");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(750, 300, 230, 30);
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("COOK TIME");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(740, 120, 230, 30);
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("DESCRIPTION");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(400, 120, 230, 30);
 
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);
-        breakfastimage.setBounds(0, 0, 800, 500);
+        breakfastimage.setBounds(0, 0, 1000, 800);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -249,8 +299,13 @@ public class Breakfast extends javax.swing.JFrame {
     private javax.swing.JTextArea BreakfastIngredients;
     private javax.swing.JButton BreakfastReturnButton;
     private javax.swing.JComboBox<String> breakfastDropDown;
+    private javax.swing.JLabel breakfast_image;
     private javax.swing.JLabel breakfastimage;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

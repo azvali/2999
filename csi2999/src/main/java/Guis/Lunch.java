@@ -46,61 +46,88 @@ public class Lunch extends javax.swing.JFrame {
         LunchDropDown = new javax.swing.JComboBox<>();
         lunchReturnButton = new javax.swing.JButton();
         lunch = new javax.swing.JLabel();
+        lunch_image = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         lunchimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 102));
-        setMaximumSize(new java.awt.Dimension(800, 500));
-        setMinimumSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(1000, 800));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 204));
-        jPanel2.setMaximumSize(new java.awt.Dimension(800, 500));
-        jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
-        jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1000, 800));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1000, 800));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 800));
         jPanel2.setLayout(null);
 
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(680, 450));
         jScrollPane3.setViewportView(null);
 
         LunchHowToCook.setEditable(false);
+        LunchHowToCook.setBackground(new java.awt.Color(204, 204, 204));
         LunchHowToCook.setColumns(20);
+        LunchHowToCook.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         LunchHowToCook.setLineWrap(true);
         LunchHowToCook.setRows(5);
         LunchHowToCook.setWrapStyleWord(true);
         jScrollPane3.setViewportView(LunchHowToCook);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(410, 120, 380, 160);
+        jScrollPane3.setBounds(20, 330, 680, 450);
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(270, 140));
 
         LunchCookTimes.setEditable(false);
+        LunchCookTimes.setBackground(new java.awt.Color(204, 204, 204));
         LunchCookTimes.setColumns(20);
+        LunchCookTimes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         LunchCookTimes.setLineWrap(true);
         LunchCookTimes.setRows(5);
         LunchCookTimes.setWrapStyleWord(true);
         jScrollPane4.setViewportView(LunchCookTimes);
 
         jPanel2.add(jScrollPane4);
-        jScrollPane4.setBounds(10, 300, 380, 160);
+        jScrollPane4.setBounds(720, 150, 270, 140);
+
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(380, 140));
 
         LunchDescription.setEditable(false);
+        LunchDescription.setBackground(new java.awt.Color(204, 204, 204));
         LunchDescription.setColumns(20);
+        LunchDescription.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         LunchDescription.setLineWrap(true);
         LunchDescription.setRows(5);
         LunchDescription.setWrapStyleWord(true);
         jScrollPane5.setViewportView(LunchDescription);
 
         jPanel2.add(jScrollPane5);
-        jScrollPane5.setBounds(10, 120, 380, 160);
+        jScrollPane5.setBounds(320, 150, 380, 140);
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(270, 450));
+        jScrollPane2.setVerifyInputWhenFocusTarget(false);
 
         LunchIngredients.setEditable(false);
+        LunchIngredients.setBackground(new java.awt.Color(204, 204, 204));
         LunchIngredients.setColumns(20);
+        LunchIngredients.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         LunchIngredients.setLineWrap(true);
         LunchIngredients.setRows(5);
         LunchIngredients.setWrapStyleWord(true);
+        LunchIngredients.setMaximumSize(new java.awt.Dimension(212, 84));
+        LunchIngredients.setMinimumSize(new java.awt.Dimension(212, 84));
         jScrollPane2.setViewportView(LunchIngredients);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(410, 300, 380, 160);
+        jScrollPane2.setBounds(720, 330, 270, 450);
 
         LunchDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +135,7 @@ public class Lunch extends javax.swing.JFrame {
             }
         });
         jPanel2.add(LunchDropDown);
-        LunchDropDown.setBounds(174, 79, 228, 22);
+        LunchDropDown.setBounds(250, 80, 228, 22);
 
         lunchReturnButton.setText("Return");
         lunchReturnButton.setName("lunchReturnButton"); // NOI18N
@@ -118,7 +145,7 @@ public class Lunch extends javax.swing.JFrame {
             }
         });
         jPanel2.add(lunchReturnButton);
-        lunchReturnButton.setBounds(461, 79, 92, 23);
+        lunchReturnButton.setBounds(600, 80, 92, 23);
 
         lunch.setBackground(new java.awt.Color(0, 0, 0));
         lunch.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -126,11 +153,37 @@ public class Lunch extends javax.swing.JFrame {
         lunch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lunch.setText("Lunch Recipes");
         jPanel2.add(lunch);
-        lunch.setBounds(250, 0, 280, 70);
+        lunch.setBounds(360, 0, 270, 40);
+        jPanel2.add(lunch_image);
+        lunch_image.setBounds(20, 150, 280, 140);
 
-        lunchimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("INGREDIENTS");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(750, 300, 230, 30);
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("COOK TIME");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(740, 120, 230, 30);
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("DESCRIPTION");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(400, 120, 230, 30);
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INSTRUCTIONS");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(250, 300, 230, 30);
+
+        lunchimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
         jPanel2.add(lunchimage);
-        lunchimage.setBounds(0, 0, 800, 500);
+        lunchimage.setBounds(0, 0, 1000, 800);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,6 +304,10 @@ public class Lunch extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> LunchDropDown;
     private javax.swing.JTextArea LunchHowToCook;
     private javax.swing.JTextArea LunchIngredients;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -258,6 +315,7 @@ public class Lunch extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lunch;
     private javax.swing.JButton lunchReturnButton;
+    private javax.swing.JLabel lunch_image;
     private javax.swing.JLabel lunchimage;
     // End of variables declaration//GEN-END:variables
 }

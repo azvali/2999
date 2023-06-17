@@ -137,7 +137,7 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(268, 6, 258, 60);
 
-        background7.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background4.png"));
+        background7.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background.png"));
         jPanel2.add(background7);
         background7.setBounds(0, 0, 800, 500);
 

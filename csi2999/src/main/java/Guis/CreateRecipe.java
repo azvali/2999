@@ -158,7 +158,7 @@ public class CreateRecipe extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(40, 120, 120, 22);
 
-        background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
+        background6.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background.png"));
         jPanel1.add(background6);
         background6.setBounds(0, 0, 800, 500);
 

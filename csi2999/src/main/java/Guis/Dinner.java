@@ -4,6 +4,7 @@
  */
 package Guis;
 
+import java.awt.Point;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.Connection;
@@ -14,6 +15,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JViewport;
 
 /**
  *
@@ -38,28 +40,112 @@ public class Dinner extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        dinnerReturnButton = new javax.swing.JButton();
-        dinnerDropDown = new javax.swing.JComboBox<>();
-        dinnerHowToPane = new javax.swing.JScrollPane();
-        dinnerHowTo = new javax.swing.JTextArea();
         dinnerIngredientsPane = new javax.swing.JScrollPane();
         dinnerIngredients = new javax.swing.JTextArea();
+        dinnerHowToPane = new javax.swing.JScrollPane();
+        dinnerHowToPane.setViewportView(dinnerHowTo);
+        dinnerHowToPane.getVerticalScrollBar().setValue(0);
+        dinnerHowTo = new javax.swing.JTextArea();
         dinnerDescriptionPane = new javax.swing.JScrollPane();
         dinnerDescription = new javax.swing.JTextArea();
         dinnerCookTimesPane = new javax.swing.JScrollPane();
         dinnerCookTimes = new javax.swing.JTextArea();
+        dinnerReturnButton = new javax.swing.JButton();
         dinner = new javax.swing.JLabel();
+        dinnerDropDown = new javax.swing.JComboBox<>();
+        dinner_image = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         dinnerimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 500));
-        setMinimumSize(new java.awt.Dimension(800, 500));
+        setMaximumSize(new java.awt.Dimension(1000, 800));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
+        setSize(new java.awt.Dimension(0, 0));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
-        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1000, 800));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1000, 800));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 800));
         jPanel1.setLayout(null);
+
+        dinnerIngredientsPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerIngredientsPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        dinnerIngredientsPane.setFocusable(false);
+
+        dinnerIngredients.setEditable(false);
+        dinnerIngredients.setBackground(new java.awt.Color(204, 204, 204));
+        dinnerIngredients.setColumns(20);
+        dinnerIngredients.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        dinnerIngredients.setLineWrap(true);
+        dinnerIngredients.setRows(5);
+        dinnerIngredients.setWrapStyleWord(true);
+        dinnerIngredients.setMaximumSize(new java.awt.Dimension(270, 450));
+        dinnerIngredients.setMinimumSize(new java.awt.Dimension(270, 450));
+        dinnerIngredientsPane.setViewportView(dinnerIngredients);
+
+        jPanel1.add(dinnerIngredientsPane);
+        dinnerIngredientsPane.setBounds(720, 330, 270, 450);
+
+        dinnerHowToPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerHowToPane.setColumnHeaderView(null);
+        dinnerHowToPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        dinnerHowToPane.setFocusCycleRoot(true);
+        dinnerHowToPane.setFocusable(false);
+        dinnerHowToPane.setHorizontalScrollBar(null);
+        dinnerHowToPane.setRowHeaderView(null);
+        dinnerHowToPane.setViewportView(null);
+
+        dinnerHowTo.setEditable(false);
+        dinnerHowTo.setBackground(new java.awt.Color(204, 204, 204));
+        dinnerHowTo.setColumns(20);
+        dinnerHowTo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        dinnerHowTo.setLineWrap(true);
+        dinnerHowTo.setRows(5);
+        dinnerHowTo.setWrapStyleWord(true);
+        dinnerHowTo.setFocusable(false);
+        dinnerHowTo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dinnerHowToPropertyChange(evt);
+            }
+        });
+        dinnerHowToPane.setViewportView(dinnerHowTo);
+
+        jPanel1.add(dinnerHowToPane);
+        dinnerHowToPane.setBounds(20, 330, 680, 450);
+
+        dinnerDescriptionPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerDescriptionPane.setFocusable(false);
+
+        dinnerDescription.setEditable(false);
+        dinnerDescription.setBackground(new java.awt.Color(204, 204, 204));
+        dinnerDescription.setColumns(20);
+        dinnerDescription.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        dinnerDescription.setLineWrap(true);
+        dinnerDescription.setRows(5);
+        dinnerDescription.setWrapStyleWord(true);
+        dinnerDescriptionPane.setViewportView(dinnerDescription);
+
+        jPanel1.add(dinnerDescriptionPane);
+        dinnerDescriptionPane.setBounds(320, 150, 380, 140);
+
+        dinnerCookTimesPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        dinnerCookTimesPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        dinnerCookTimesPane.setFocusable(false);
+
+        dinnerCookTimes.setEditable(false);
+        dinnerCookTimes.setBackground(new java.awt.Color(204, 204, 204));
+        dinnerCookTimes.setColumns(20);
+        dinnerCookTimes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        dinnerCookTimes.setLineWrap(true);
+        dinnerCookTimes.setRows(5);
+        dinnerCookTimes.setWrapStyleWord(true);
+        dinnerCookTimesPane.setViewportView(dinnerCookTimes);
+
+        jPanel1.add(dinnerCookTimesPane);
+        dinnerCookTimesPane.setBounds(720, 150, 270, 140);
 
         dinnerReturnButton.setText("Return");
         dinnerReturnButton.setName("dinnerReturnButton"); // NOI18N
@@ -69,71 +155,7 @@ public class Dinner extends javax.swing.JFrame {
             }
         });
         jPanel1.add(dinnerReturnButton);
-        dinnerReturnButton.setBounds(461, 79, 92, 23);
-
-        dinnerDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Recipe" }));
-        dinnerDropDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dinnerDropDownActionPerformed(evt);
-            }
-        });
-        jPanel1.add(dinnerDropDown);
-        dinnerDropDown.setBounds(174, 79, 228, 22);
-
-        dinnerHowToPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        dinnerHowToPane.setFocusable(false);
-
-        dinnerHowTo.setEditable(false);
-        dinnerHowTo.setColumns(20);
-        dinnerHowTo.setLineWrap(true);
-        dinnerHowTo.setRows(5);
-        dinnerHowTo.setWrapStyleWord(true);
-        dinnerHowTo.setAutoscrolls(false);
-        dinnerHowTo.setFocusable(false);
-        dinnerHowToPane.setViewportView(dinnerHowTo);
-
-        jPanel1.add(dinnerHowToPane);
-        dinnerHowToPane.setBounds(420, 120, 370, 150);
-
-        dinnerIngredientsPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        dinnerIngredientsPane.setFocusable(false);
-
-        dinnerIngredients.setEditable(false);
-        dinnerIngredients.setColumns(20);
-        dinnerIngredients.setLineWrap(true);
-        dinnerIngredients.setRows(5);
-        dinnerIngredients.setWrapStyleWord(true);
-        dinnerIngredientsPane.setViewportView(dinnerIngredients);
-
-        jPanel1.add(dinnerIngredientsPane);
-        dinnerIngredientsPane.setBounds(420, 290, 370, 150);
-
-        dinnerDescriptionPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        dinnerDescriptionPane.setFocusable(false);
-
-        dinnerDescription.setEditable(false);
-        dinnerDescription.setColumns(20);
-        dinnerDescription.setLineWrap(true);
-        dinnerDescription.setRows(5);
-        dinnerDescription.setWrapStyleWord(true);
-        dinnerDescriptionPane.setViewportView(dinnerDescription);
-
-        jPanel1.add(dinnerDescriptionPane);
-        dinnerDescriptionPane.setBounds(30, 120, 370, 150);
-
-        dinnerCookTimesPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        dinnerCookTimesPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        dinnerCookTimesPane.setFocusable(false);
-
-        dinnerCookTimes.setEditable(false);
-        dinnerCookTimes.setColumns(20);
-        dinnerCookTimes.setLineWrap(true);
-        dinnerCookTimes.setRows(5);
-        dinnerCookTimes.setWrapStyleWord(true);
-        dinnerCookTimesPane.setViewportView(dinnerCookTimes);
-
-        jPanel1.add(dinnerCookTimesPane);
-        dinnerCookTimesPane.setBounds(30, 290, 370, 150);
+        dinnerReturnButton.setBounds(610, 80, 90, 23);
 
         dinner.setBackground(new java.awt.Color(153, 255, 153));
         dinner.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -141,21 +163,55 @@ public class Dinner extends javax.swing.JFrame {
         dinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dinner.setText("Dinner Recipes");
         jPanel1.add(dinner);
-        dinner.setBounds(260, 0, 270, 60);
+        dinner.setBounds(360, 0, 270, 40);
 
-        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
+        dinnerDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dinnerDropDownActionPerformed(evt);
+            }
+        });
+        jPanel1.add(dinnerDropDown);
+        dinnerDropDown.setBounds(270, 80, 230, 22);
+        jPanel1.add(dinner_image);
+        dinner_image.setBounds(20, 150, 280, 140);
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("COOK TIME");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(740, 120, 230, 30);
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("DESCRIPTION");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(400, 120, 230, 30);
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INGREDIENTS");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(750, 300, 230, 30);
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("INSTRUCTIONS");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(250, 300, 230, 30);
+
+        dinnerimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background4.png"));
         jPanel1.add(dinnerimage);
-        dinnerimage.setBounds(0, 0, 800, 500);
+        dinnerimage.setBounds(0, 0, 1000, 800);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -192,8 +248,11 @@ public class Dinner extends javax.swing.JFrame {
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }      
-        
     }//GEN-LAST:event_dinnerDropDownActionPerformed
+
+    private void dinnerHowToPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dinnerHowToPropertyChange
+       
+    }//GEN-LAST:event_dinnerHowToPropertyChange
 private void UpdateCombo(){
         //gather all information from dinner table
         String sql = "select * from recipes.dinner";
@@ -269,7 +328,12 @@ private void UpdateCombo(){
     private javax.swing.JTextArea dinnerIngredients;
     private javax.swing.JScrollPane dinnerIngredientsPane;
     private javax.swing.JButton dinnerReturnButton;
+    private javax.swing.JLabel dinner_image;
     private javax.swing.JLabel dinnerimage;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
