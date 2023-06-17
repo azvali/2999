@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -223,12 +224,15 @@ public class Lunch extends javax.swing.JFrame {
             Statement stm = conn.createStatement();
             Object item = LunchDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.lunch WHERE recipe_name = '"+item+"'");
-                        rs.next();
+                        if (rs.next()){
+                        byte[] imagedata = rs.getBytes("recipe_image");
+                        ImageIcon format = new ImageIcon(imagedata);
+                        lunch_image.setIcon(format);
                         LunchDescription.setText(rs.getString("description"));
                         LunchHowToCook.setText(rs.getString("how_to_cook"));
                         LunchCookTimes.setText(rs.getString("cook_time"));
                         LunchIngredients.setText(rs.getString("ingredients"));
-                        conn.close();
+                        conn.close();}
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, e);
         }

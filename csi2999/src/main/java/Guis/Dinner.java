@@ -4,9 +4,11 @@
  */
 package Guis;
 
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import static java.lang.String.format;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JViewport;
 
@@ -232,18 +235,20 @@ public class Dinner extends javax.swing.JFrame {
         String DatabaseUsername = "csi2999";
         String DatabasePassword = "bhl7^W0O#qq2";
         String Database = "login";
-
     try{
         Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
         Statement stm = conn.createStatement();
                         Object item = dinnerDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
-                        rs.next();
+                        if (rs.next()){
+                        byte[] imagedata = rs.getBytes("recipe_image");
+                        ImageIcon format = new ImageIcon(imagedata);
+                        dinner_image.setIcon(format);
                         dinnerDescription.setText(rs.getString("description"));
                         dinnerHowTo.setText(rs.getString("how_to_cook"));
                         dinnerCookTimes.setText(rs.getString("cook_time"));
                         dinnerIngredients.setText(rs.getString("ingredients"));
-                        conn.close();
+                        conn.close();}
         } 
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
