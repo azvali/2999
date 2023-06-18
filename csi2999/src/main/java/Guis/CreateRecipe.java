@@ -319,7 +319,7 @@ public class CreateRecipe extends javax.swing.JFrame {
             RecipePhoto.setIcon(icon);
             path2 = path;
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(rootPane, e);
+            JOptionPane.showMessageDialog(rootPane, ex);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
