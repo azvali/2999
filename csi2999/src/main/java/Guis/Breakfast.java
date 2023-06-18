@@ -216,7 +216,7 @@ public class Breakfast extends javax.swing.JFrame {
             //create connection
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
             Statement stm = conn.createStatement();
-            Object item = breakfastDropDown.getSelectedItem();
+            String item = (String)breakfastDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.breakfast WHERE recipe_name = '"+item+"'");
                         if (rs.next()){
                         byte[] imagedata = rs.getBytes("recipe_image");

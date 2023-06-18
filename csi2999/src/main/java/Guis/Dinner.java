@@ -238,7 +238,7 @@ public class Dinner extends javax.swing.JFrame {
     try{
         Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
         Statement stm = conn.createStatement();
-                        Object item = dinnerDropDown.getSelectedItem();
+                        String item = (String)dinnerDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner WHERE recipe_name = '"+item+"'");
                         if (rs.next()){
                         byte[] imagedata = rs.getBytes("recipe_image");
