@@ -163,10 +163,10 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         try{
                 Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
                 Statement stm = conn.createStatement();
-                String item = (String)bookmark_list.getSelectedValue();
-                ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner, recipes.lunch, recipes.breakfast WHERE lunch.recipe_name = '"+item+"' OR breakfast.recipe_name = '"+item+"' OR dinner.recipe_name = '"+item+"'");
-                if (rs.next()){
+                String item = (String)listModel.getElementAt(bookmark_list.getSelectedIndex());
+                ResultSet rs = stm.executeQuery("SELECT joined.* FROM (SELECT * FROM recipes.breakfast UNION ALL SELECT * FROM recipes.lunch UNION ALL SELECT * FROM recipes.dinner) AS joined WHERE joined.recipe_name = '"+item+"'");
                     BookmarkView bookmark = new BookmarkView();
+                    rs.next();
                     byte[] imagedata = rs.getBytes("recipe_image");
                     ImageIcon format = new ImageIcon(imagedata);    
                     bookmark.recipe_image.setIcon(format);
@@ -176,7 +176,7 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
                     bookmark.recipe_ingredients.setText(rs.getString("ingredients"));
                     bookmark.recipe_name.setText(rs.getString("recipe_name"));
                     bookmark.setVisible(true);
-                    conn.close();}
+                    conn.close();
         } 
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
