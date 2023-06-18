@@ -4,17 +4,29 @@
  */
 package Guis;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author azval
  */
-public class BookmarkedRecipes extends javax.swing.JFrame {
-
+public class BookmarkedRecipes extends javax.swing.JFrame { 
+    DefaultListModel<String> listModel = new DefaultListModel<>(); 
     /**
      * Creates new form BookmarkedRecipes
      */
     public BookmarkedRecipes() {
         initComponents();
+        UpdateList();
     }
 
     /**
@@ -27,11 +39,13 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        BookmarksDropDown = new javax.swing.JComboBox<>();
         BookmarksReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        open_bookmark = new javax.swing.JButton();
+        delete_bookmark = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        bookmark_list = new javax.swing.JList<>();
         background8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,28 +60,6 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 190, 760, 290);
-
-        BookmarksDropDown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BookmarksDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        BookmarksDropDown.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                BookmarksDropDownMouseWheelMoved(evt);
-            }
-        });
-        BookmarksDropDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BookmarksDropDownActionPerformed(evt);
-            }
-        });
-        jPanel2.add(BookmarksDropDown);
-        BookmarksDropDown.setBounds(212, 154, 197, 26);
-
         BookmarksReturnButton.setBackground(new java.awt.Color(204, 204, 204));
         BookmarksReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BookmarksReturnButton.setText("Return");
@@ -77,13 +69,45 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BookmarksReturnButton);
-        BookmarksReturnButton.setBounds(443, 154, 96, 27);
+        BookmarksReturnButton.setBounds(650, 20, 100, 30);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bookmarks");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(288, 33, 200, 48);
+        jLabel1.setBounds(280, 0, 200, 80);
+
+        open_bookmark.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        open_bookmark.setText("Open");
+        open_bookmark.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                open_bookmarkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(open_bookmark);
+        open_bookmark.setBounds(570, 180, 100, 60);
+
+        delete_bookmark.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete_bookmark.setText("Delete");
+        delete_bookmark.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_bookmarkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(delete_bookmark);
+        delete_bookmark.setBounds(570, 270, 100, 60);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Select Recipe");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(310, 120, 160, 30);
+
+        jScrollPane2.setViewportView(bookmark_list);
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(210, 150, 340, 280);
 
         background8.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\\\images\\background.png"));
         background8.setOpaque(true);
@@ -110,14 +134,77 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
         UserMain user = new UserMain();
         user.setVisible(true);
     }//GEN-LAST:event_BookmarksReturnButtonActionPerformed
+    private void UpdateList(){
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+         
+        bookmark_list.setModel(listModel);
+        try{
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            PreparedStatement pst = conn.prepareStatement("SELECT * FROM bookmarks.bookmark WHERE username = '"+Login.userEntry+"'");
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()){
+                listModel.addElement(rs.getString("recipe_name"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }
+    private void open_bookmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_bookmarkActionPerformed
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+        try{
+                Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+                Statement stm = conn.createStatement();
+                String item = (String)bookmark_list.getSelectedValue();
+                ResultSet rs = stm.executeQuery("SELECT * FROM recipes.dinner, recipes.lunch, recipes.breakfast WHERE lunch.recipe_name = '"+item+"' OR breakfast.recipe_name = '"+item+"' OR dinner.recipe_name = '"+item+"'");
+                if (rs.next()){
+                    BookmarkView bookmark = new BookmarkView();
+                    byte[] imagedata = rs.getBytes("recipe_image");
+                    ImageIcon format = new ImageIcon(imagedata);    
+                    bookmark.recipe_image.setIcon(format);
+                    bookmark.recipe_description.setText(rs.getString("description"));
+                    bookmark.recipe_howto.setText(rs.getString("how_to_cook"));
+                    bookmark.recipe_cooktime.setText(rs.getString("cook_time"));
+                    bookmark.recipe_ingredients.setText(rs.getString("ingredients"));
+                    bookmark.recipe_name.setText(rs.getString("recipe_name"));
+                    bookmark.setVisible(true);
+                    conn.close();}
+        } 
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }      
+        
+    }//GEN-LAST:event_open_bookmarkActionPerformed
 
-    private void BookmarksDropDownMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_BookmarksDropDownMouseWheelMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BookmarksDropDownMouseWheelMoved
-
-    private void BookmarksDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookmarksDropDownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BookmarksDropDownActionPerformed
+    private void delete_bookmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_bookmarkActionPerformed
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        try{
+                Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+                Statement stm = conn.createStatement();
+                String item = (String)bookmark_list.getSelectedValue();
+                ResultSet rs = stm.executeQuery("SELECT * FROM bookmarks.bookmark WHERE username = '"+Login.userEntry+"' AND recipe_name = '"+item+"'");
+                if (rs.next()){
+                    stm.executeUpdate("DELETE FROM bookmarks.bookmark WHERE username = '"+Login.userEntry+"' AND recipe_name = '"+item+"'");
+                conn.close();}
+        } 
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }     
+        int index = bookmark_list.getSelectedIndex();
+        listModel.remove(index);
+    }//GEN-LAST:event_delete_bookmarkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,12 +242,14 @@ public class BookmarkedRecipes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> BookmarksDropDown;
     private javax.swing.JButton BookmarksReturnButton;
     private javax.swing.JLabel background8;
+    private javax.swing.JList<String> bookmark_list;
+    private javax.swing.JButton delete_bookmark;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton open_bookmark;
     // End of variables declaration//GEN-END:variables
 }

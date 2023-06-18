@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -52,6 +53,7 @@ public class Lunch extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        bookmark_btn = new javax.swing.JButton();
         lunchimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,7 +148,7 @@ public class Lunch extends javax.swing.JFrame {
             }
         });
         jPanel2.add(lunchReturnButton);
-        lunchReturnButton.setBounds(600, 80, 92, 23);
+        lunchReturnButton.setBounds(800, 80, 92, 23);
 
         lunch.setBackground(new java.awt.Color(0, 0, 0));
         lunch.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -181,6 +183,15 @@ public class Lunch extends javax.swing.JFrame {
         jLabel5.setText("INSTRUCTIONS");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(250, 300, 230, 30);
+
+        bookmark_btn.setText("Bookmark");
+        bookmark_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookmark_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bookmark_btn);
+        bookmark_btn.setBounds(580, 80, 140, 23);
 
         lunchimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background3.png"));
         jPanel2.add(lunchimage);
@@ -237,6 +248,36 @@ public class Lunch extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, e);
         }
     }//GEN-LAST:event_LunchDropDownActionPerformed
+
+    private void bookmark_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookmark_btnActionPerformed
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        String username = Login.userEntry;
+        try{
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            Statement stm = conn.createStatement();
+            String item = (String)LunchDropDown.getSelectedItem();
+            ResultSet rs = stm.executeQuery("SELECT * FROM recipes.lunch WHERE recipe_name = '"+item+"'");
+            if (rs.next()){
+                String checkQuery = "SELECT username FROM bookmarks.bookmark WHERE username = ? AND recipe_name = '"+item+"'";
+                PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+                checkStmt.setString(1, username);
+                ResultSet resultSet = checkStmt.executeQuery();
+                if (resultSet.next()) {
+                    JOptionPane.showMessageDialog(null,"Bookmark already exists!");}
+                else{
+                    stm.executeUpdate("INSERT INTO bookmarks.bookmark(username, recipe_name) VALUES('"+username+"', '"+item+"')");
+                    JOptionPane.showMessageDialog(null,"Bookmark added!");}
+                conn.close();
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bookmark_btnActionPerformed
     private void UpdateCombo(){
         //gather all information from lunch table
         String sql = "select * from recipes.lunch";
@@ -308,6 +349,7 @@ public class Lunch extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> LunchDropDown;
     private javax.swing.JTextArea LunchHowToCook;
     private javax.swing.JTextArea LunchIngredients;
+    private javax.swing.JButton bookmark_btn;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
     public static boolean IfAdmin;
+    public static String userEntry;
     /**
      * Creates new form Login
      */
@@ -149,7 +150,7 @@ public class Login extends javax.swing.JFrame {
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
 
-        String userEntry = UsernameTextBox.getText();
+        userEntry = UsernameTextBox.getText();
         String passEntry = PasswordTextBox.getText();
         
         //database connection details

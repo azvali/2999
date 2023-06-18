@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -53,6 +54,7 @@ public class Breakfast extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         breakfastimage = new javax.swing.JLabel();
+        bookmark_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 800));
@@ -133,7 +135,7 @@ public class Breakfast extends javax.swing.JFrame {
             }
         });
         jPanel2.add(BreakfastReturnButton);
-        BreakfastReturnButton.setBounds(610, 80, 92, 23);
+        BreakfastReturnButton.setBounds(800, 80, 92, 23);
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -180,6 +182,15 @@ public class Breakfast extends javax.swing.JFrame {
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);
         breakfastimage.setBounds(0, 0, 1000, 800);
+
+        bookmark_btn.setText("Bookmark");
+        bookmark_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookmark_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bookmark_btn);
+        bookmark_btn.setBounds(580, 80, 140, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,6 +242,36 @@ public class Breakfast extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, e);
         }
     }//GEN-LAST:event_breakfastDropDownActionPerformed
+
+    private void bookmark_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookmark_btnActionPerformed
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        String username = Login.userEntry;
+        try{
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            Statement stm = conn.createStatement();
+            String item = (String)breakfastDropDown.getSelectedItem();
+            ResultSet rs = stm.executeQuery("SELECT * FROM recipes.breakfast WHERE recipe_name = '"+item+"'");
+            if (rs.next()){
+                String checkQuery = "SELECT username FROM bookmarks.bookmark WHERE username = ? AND recipe_name = '"+item+"'";
+                PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+                checkStmt.setString(1, username);
+                ResultSet resultSet = checkStmt.executeQuery();
+                if (resultSet.next()) {
+                    JOptionPane.showMessageDialog(null,"Bookmark already exists!");}
+                else{
+                    stm.executeUpdate("INSERT INTO bookmarks.bookmark(username, recipe_name) VALUES('"+username+"', '"+item+"')");
+                    JOptionPane.showMessageDialog(null,"Bookmark added!");}
+                conn.close();
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bookmark_btnActionPerformed
  private void UpdateCombo(){
         //gather all information from breakfast table
         String sql = "select * from recipes.breakfast";
@@ -302,6 +343,7 @@ public class Breakfast extends javax.swing.JFrame {
     private javax.swing.JTextArea BreakfastHowTo;
     private javax.swing.JTextArea BreakfastIngredients;
     private javax.swing.JButton BreakfastReturnButton;
+    private javax.swing.JButton bookmark_btn;
     private javax.swing.JComboBox<String> breakfastDropDown;
     private javax.swing.JLabel breakfast_image;
     private javax.swing.JLabel breakfastimage;
