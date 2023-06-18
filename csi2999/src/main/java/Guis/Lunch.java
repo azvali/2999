@@ -222,7 +222,7 @@ public class Lunch extends javax.swing.JFrame {
             //create connection
             Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
             Statement stm = conn.createStatement();
-            Object item = LunchDropDown.getSelectedItem();
+            String item = (String)LunchDropDown.getSelectedItem();
                         ResultSet rs = stm.executeQuery("SELECT * FROM recipes.lunch WHERE recipe_name = '"+item+"'");
                         if (rs.next()){
                         byte[] imagedata = rs.getBytes("recipe_image");
