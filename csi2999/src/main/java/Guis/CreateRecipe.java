@@ -284,6 +284,7 @@ public class CreateRecipe extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(rootPane, "error");
                     break;
             }
+            JOptionPane.showMessageDialog(rootPane, "Recipe Created Successfully");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }

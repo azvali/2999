@@ -184,7 +184,8 @@ public class BookmarkView extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1016, 808));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void recipe_howtoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_recipe_howtoPropertyChange

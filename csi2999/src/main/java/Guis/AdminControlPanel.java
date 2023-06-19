@@ -53,7 +53,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BackToLogin);
-        BackToLogin.setBounds(10, 450, 150, 40);
+        BackToLogin.setBounds(40, 410, 150, 40);
 
         DeleteRecipe.setBackground(new java.awt.Color(255, 51, 51));
         DeleteRecipe.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -109,7 +109,8 @@ public class AdminControlPanel extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(807, 508));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CreateNewRecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewRecipeActionPerformed

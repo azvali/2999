@@ -4,12 +4,24 @@
  */
 package Guis;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ethan
  */
 public class DeleteRecipe extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form DeleteRecipe
      */
@@ -27,18 +39,20 @@ public class DeleteRecipe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        CheckRecipeDeleteButton = new javax.swing.JButton();
+        r = new javax.swing.JTextField();
+        CheckRecipeButton = new javax.swing.JButton();
+        labelTextEnter1 = new javax.swing.JLabel();
+        DeleteComboBox = new javax.swing.JComboBox<>();
         labelTextEnter = new javax.swing.JLabel();
         DeleteRecipeButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        Cook = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        Desc = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        How = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        Ingr = new javax.swing.JTextArea();
         DeleteRecipeReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         background7 = new javax.swing.JLabel();
@@ -53,31 +67,35 @@ public class DeleteRecipe extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(800, 500));
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
+        jPanel2.add(r);
+        r.setBounds(200, 90, 160, 30);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        CheckRecipeButton.setBackground(new java.awt.Color(255, 204, 204));
+        CheckRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CheckRecipeButton.setText("Check Recipe");
+        CheckRecipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                CheckRecipeButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(171, 110, 170, 30);
+        jPanel2.add(CheckRecipeButton);
+        CheckRecipeButton.setBounds(500, 440, 130, 27);
 
-        CheckRecipeDeleteButton.setBackground(new java.awt.Color(255, 204, 204));
-        CheckRecipeDeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CheckRecipeDeleteButton.setText("Check Recipe");
-        CheckRecipeDeleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckRecipeDeleteButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(CheckRecipeDeleteButton);
-        CheckRecipeDeleteButton.setBounds(401, 103, 140, 40);
+        labelTextEnter1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        labelTextEnter1.setForeground(new java.awt.Color(153, 255, 153));
+        labelTextEnter1.setText("Enter Recipe Name:");
+        jPanel2.add(labelTextEnter1);
+        labelTextEnter1.setBounds(10, 90, 190, 36);
+
+        DeleteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a Catagory", "Breakfast", "Lunch", "Dinner" }));
+        jPanel2.add(DeleteComboBox);
+        DeleteComboBox.setBounds(550, 100, 200, 22);
 
         labelTextEnter.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         labelTextEnter.setForeground(new java.awt.Color(153, 255, 153));
-        labelTextEnter.setText("Enter Recipe ID:");
+        labelTextEnter.setText("Select Catagory:");
         jPanel2.add(labelTextEnter);
-        labelTextEnter.setBounds(13, 106, 150, 36);
+        labelTextEnter.setBounds(390, 90, 150, 36);
 
         DeleteRecipeButton.setBackground(new java.awt.Color(255, 102, 102));
         DeleteRecipeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -88,35 +106,47 @@ public class DeleteRecipe extends javax.swing.JFrame {
             }
         });
         jPanel2.add(DeleteRecipeButton);
-        DeleteRecipeButton.setBounds(574, 103, 140, 40);
+        DeleteRecipeButton.setBounds(670, 440, 100, 30);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        Cook.setEditable(false);
+        Cook.setColumns(20);
+        Cook.setLineWrap(true);
+        Cook.setRows(5);
+        Cook.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(Cook);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(20, 299, 369, 150);
+        jScrollPane3.setBounds(20, 280, 369, 150);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        Desc.setEditable(false);
+        Desc.setColumns(20);
+        Desc.setLineWrap(true);
+        Desc.setRows(5);
+        Desc.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(Desc);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 155, 369, 132);
+        jScrollPane2.setBounds(20, 130, 369, 132);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        How.setEditable(false);
+        How.setColumns(20);
+        How.setLineWrap(true);
+        How.setRows(5);
+        How.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(How);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(401, 155, 370, 132);
+        jScrollPane1.setBounds(400, 130, 370, 132);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        Ingr.setEditable(false);
+        Ingr.setColumns(20);
+        Ingr.setLineWrap(true);
+        Ingr.setRows(5);
+        Ingr.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(Ingr);
 
         jPanel2.add(jScrollPane4);
-        jScrollPane4.setBounds(401, 299, 370, 150);
+        jScrollPane4.setBounds(400, 280, 370, 150);
 
         DeleteRecipeReturnButton.setBackground(new java.awt.Color(255, 102, 204));
         DeleteRecipeReturnButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -152,7 +182,8 @@ public class DeleteRecipe extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(804, 508));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteRecipeReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeReturnButtonActionPerformed
@@ -162,21 +193,105 @@ public class DeleteRecipe extends javax.swing.JFrame {
         admin.setVisible(true);
     }//GEN-LAST:event_DeleteRecipeReturnButtonActionPerformed
 
-    private void CheckRecipeDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecipeDeleteButtonActionPerformed
+    private void CheckRecipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckRecipeButtonActionPerformed
         // displays selected recipe in text areas 
         
+         //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        String tableName = "";
         
-    }//GEN-LAST:event_CheckRecipeDeleteButtonActionPerformed
+        try{
+            //create connection
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            Statement stm = conn.createStatement();
+            String item = (String)DeleteComboBox.getSelectedItem();
+            String cat = r.getText();
+            switch (item) {
+                case "Breakfast":
+                    tableName = "recipes.breakfast";
+                    break;
+                case "Lunch":
+                    tableName = "recipes.lunch";
+                    break;
+                case "Dinner":
+                    tableName = "recipes.dinner";
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(rootPane, "Invalid recipe catagory.");
+                    return; // Exit the method if the recipe name is invalid
+            }
+                  
+            
+            ResultSet rs = stm.executeQuery("SELECT * FROM " + tableName +" WHERE recipe_name = '"+cat+"'");
+            if (rs.next()){
+                Desc.setText(rs.getString("description"));
+                How.setText(rs.getString("how_to_cook"));
+                Cook.setText(rs.getString("cook_time"));
+                Ingr.setText(rs.getString("ingredients"));
+                conn.close();
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+        
+    }//GEN-LAST:event_CheckRecipeButtonActionPerformed
 
     private void DeleteRecipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecipeButtonActionPerformed
         // removes the recipe from the database
+        //database connection details
+        String host = "jdbc:mysql://csi2999.mysql.database.azure.com:3306/login";
+        int port = 3306;
+        String DatabaseUsername = "csi2999";
+        String DatabasePassword = "bhl7^W0O#qq2";
+        String Database = "login";
+        
+        
+        try {
+            String RecipeCatagory = (String)DeleteComboBox.getSelectedItem();
+            String RecipeNameInput = r.getText();
+            String tableName = "";
+            Connection conn = DriverManager.getConnection(host, DatabaseUsername, DatabasePassword);
+            
+            switch (RecipeCatagory) {
+                case "Breakfast":
+                    tableName = "recipes.breakfast";
+                    break;
+                case "Lunch":
+                    tableName = "recipes.lunch";
+                    break;
+                case "Dinner":
+                    tableName = "recipes.dinner";
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(rootPane, "Invalid recipe catagory.");
+                    return; // Exit the method if the recipe name is invalid
+            }
+
+            try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM " + tableName + " WHERE Recipe_name = ?")) {
+                stmt.setString(1, RecipeNameInput);
+
+                int rowsDeleted = stmt.executeUpdate();
+
+                if (rowsDeleted > 0) {
+                    JOptionPane.showMessageDialog(rootPane, RecipeNameInput + " deleted successfully!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Recipe not found.");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(rootPane, "Error occurred while deleting the recipe.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Error connecting to the database.");
+        }
         
         
     }//GEN-LAST:event_DeleteRecipeButtonActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,9 +329,14 @@ public class DeleteRecipe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CheckRecipeDeleteButton;
+    private javax.swing.JButton CheckRecipeButton;
+    private javax.swing.JTextArea Cook;
+    private javax.swing.JComboBox<String> DeleteComboBox;
     private javax.swing.JButton DeleteRecipeButton;
     private javax.swing.JButton DeleteRecipeReturnButton;
+    private javax.swing.JTextArea Desc;
+    private javax.swing.JTextArea How;
+    private javax.swing.JTextArea Ingr;
     private javax.swing.JLabel background7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
@@ -224,11 +344,8 @@ public class DeleteRecipe extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelTextEnter;
+    private javax.swing.JLabel labelTextEnter1;
+    private javax.swing.JTextField r;
     // End of variables declaration//GEN-END:variables
 }
