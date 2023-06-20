@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.io.*;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ import javax.swing.ImageIcon;
  */
 public class CreateRecipe extends javax.swing.JFrame {
     
-    String path2 = null;
+    byte[] imageBytes = null;
     
     /**
      * Creates new form CreateRecipe
@@ -244,8 +245,7 @@ public class CreateRecipe extends javax.swing.JFrame {
                 case "Breakfast":
                     {
                         PreparedStatement pst = conn.prepareStatement("INSERT INTO recipes.breakfast (recipe_image , recipe_name , description , ingredients , cook_time , how_to_cook) VALUES (?,?,?,?,?,?)");
-                        InputStream is = new FileInputStream(new File(path2));
-                        pst.setBlob(1, is);
+                        pst.setBytes(1, imageBytes);
                         pst.setString(2, recipeName);
                         pst.setString(3, desc);
                         pst.setString(4, ing);
@@ -257,8 +257,7 @@ public class CreateRecipe extends javax.swing.JFrame {
                 case "Lunch":
                     {
                         PreparedStatement pst = conn.prepareStatement("INSERT INTO recipes.lunch (recipe_image , recipe_name , description , ingredients , cook_time , how_to_cook) VALUES (?,?,?,?,?,?)");
-                        InputStream is = new FileInputStream(new File(path2));
-                        pst.setBlob(1, is);
+                        pst.setBytes(1, imageBytes);
                         pst.setString(2, recipeName);
                         pst.setString(3, desc);
                         pst.setString(4, ing);
@@ -270,8 +269,7 @@ public class CreateRecipe extends javax.swing.JFrame {
                 case "Dinner":
                     {
                         PreparedStatement pst = conn.prepareStatement("INSERT INTO recipes.dinner (recipe_image , recipe_name , description , ingredients , cook_time , how_to_cook) VALUES (?,?,?,?,?,?)");
-                        InputStream is = new FileInputStream(new File(path2));
-                        pst.setBlob(1, is);
+                        pst.setBytes(1, imageBytes);
                         pst.setString(2, recipeName);
                         pst.setString(3, desc);
                         pst.setString(4, ing);
@@ -309,22 +307,43 @@ public class CreateRecipe extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         String path = f.getAbsolutePath();
         try {
+            BufferedImage originalImage = ImageIO.read(f);
+            int newWidth = 280;
+            int newHeight = 140;
+            //resize image
+            Image resizedImage = originalImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+            BufferedImage resizedBufferedImage = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
+            resizedBufferedImage.getGraphics().drawImage(resizedImage, 0, 0, null);
+            //overwrite the original file with resized file
+            File resizedFile = new File(path);
+            ImageIO.write(resizedBufferedImage, "jpg", resizedFile);
+            //set the icon in create recipe gui
             BufferedImage bi = ImageIO.read(new File(path));
             Image img = bi.getScaledInstance(280, 140, Image.SCALE_SMOOTH);
             ImageIcon icon = new ImageIcon(img);
             RecipePhoto.setIcon(icon);
-            path2 = path;
+            //convert the image into byte data for sql insertion
+            InputStream inputStream = new FileInputStream(resizedFile);
+            ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                byteOutputStream.write(buffer, 0, bytesRead);
+            }
+            imageBytes = byteOutputStream.toByteArray();
+
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(rootPane, ex);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
     /**
      * @param args the command line arguments
      */
