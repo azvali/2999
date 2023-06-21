@@ -48,13 +48,13 @@ public class Breakfast extends javax.swing.JFrame {
         BreakfastReturnButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         breakfastDropDown = new javax.swing.JComboBox<>();
+        bookmark_btn = new javax.swing.JButton();
         breakfast_image = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         breakfastimage = new javax.swing.JLabel();
-        bookmark_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 800));
@@ -152,6 +152,15 @@ public class Breakfast extends javax.swing.JFrame {
         });
         jPanel2.add(breakfastDropDown);
         breakfastDropDown.setBounds(270, 80, 228, 22);
+
+        bookmark_btn.setText("Bookmark");
+        bookmark_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookmark_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bookmark_btn);
+        bookmark_btn.setBounds(580, 80, 140, 23);
         jPanel2.add(breakfast_image);
         breakfast_image.setBounds(20, 150, 280, 140);
 
@@ -182,15 +191,6 @@ public class Breakfast extends javax.swing.JFrame {
         breakfastimage.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir") +"\\src\\main\\java\\Guis\\images\\background2.png"));
         jPanel2.add(breakfastimage);
         breakfastimage.setBounds(0, 0, 1000, 800);
-
-        bookmark_btn.setText("Bookmark");
-        bookmark_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookmark_btnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bookmark_btn);
-        bookmark_btn.setBounds(580, 80, 140, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
